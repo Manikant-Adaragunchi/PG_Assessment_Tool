@@ -7,42 +7,26 @@ const WetlabEvaluationSchema = new mongoose.Schema({
         required: true,
         index: true
     },
-    moduleCode: {
-        type: String,
-        required: true,
-        default: 'WETLAB'
-    },
-    topicName: { // Mapped to 'Activity Name' in items
-        type: String,
-        required: true
-    },
-    scores: [{
-        type: Number,
-        min: 0,
-        max: 5
-    }], // Array of numbers corresponding to items
-
-    totalScore: Number,
-    grade: String,
-    remarksOverall: String,
-
-    facultyId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
-
-    status: {
-        type: String,
-        enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED', 'PERMANENT', 'COMPLETED'],
-        default: 'TEMPORARY'
-    },
-
-    acknowledgedBy: {
-        userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-        fullName: String
-    },
-    acknowledgedAt: { type: Date }
+    attempts: [{
+        attemptNumber: { type: Number, default: 1 },
+        exerciseName: { type: String, required: true },
+        date: { type: Date, default: Date.now },
+        scores: {
+            procedureSteps: Number,
+            tissueHandling: Number,
+            timeManagement: Number,
+            outcome: Number
+        },
+        totalScore: Number,
+        grade: String,
+        remarks: String,
+        facultyId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+        status: {
+            type: String,
+            enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED', 'PERMANENT', 'COMPLETED'],
+            default: 'PENDING_ACK'
+        }
+    }]
 }, { timestamps: true });
 
 module.exports = mongoose.models.WetlabEvaluation || mongoose.model('WetlabEvaluation', WetlabEvaluationSchema);

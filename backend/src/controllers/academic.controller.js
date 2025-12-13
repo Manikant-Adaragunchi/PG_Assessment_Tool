@@ -6,7 +6,7 @@ const User = require('../models/User');
 exports.addAttempt = async (req, res) => {
     try {
         const { internId } = req.params;
-        const { topic, presentationQuality, content, qaHandling, slidesQuality, timing, remarks } = req.body;
+        const { evaluationType, topic, presentationQuality, content, qaHandling, slidesQuality, timing, remarks } = req.body;
         const facultyId = req.user._id;
 
         let evalDoc = await AcademicEvaluation.findOne({ internId });
@@ -18,6 +18,10 @@ exports.addAttempt = async (req, res) => {
             attemptNumber: evalDoc.attempts.length + 1,
             date: new Date(),
             facultyId,
+            attemptNumber: evalDoc.attempts.length + 1,
+            date: new Date(),
+            facultyId,
+            evaluationType,
             topic,
             scores: {
                 presentationQuality,
@@ -53,6 +57,7 @@ exports.editAttempt = async (req, res) => {
 
         // Update
         const att = evalDoc.attempts[attemptIndex];
+        if (req.body.evaluationType) att.evaluationType = req.body.evaluationType; // Allow updating type if needed
         att.topic = topic;
         att.scores = { presentationQuality, content, qaHandling, slidesQuality, timing };
         att.remarks = remarks;

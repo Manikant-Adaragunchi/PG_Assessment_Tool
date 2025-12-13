@@ -24,11 +24,13 @@ router.get('/opd/:moduleCode/:internId', opdController.getAttempts);
 // Academic Routes
 const academicController = require('../controllers/academic.controller');
 router.post('/academic/:internId/attempts', authorize('FACULTY', 'HOD'), academicController.addAttempt);
+router.put('/academic/:internId/attempts/:attemptNumber', authorize('FACULTY', 'HOD'), academicController.editAttempt);
 router.get('/academic/:internId', academicController.getAttempts);
 
 // WetLab Routes
 const wetlabController = require('../controllers/wetlab.controller');
 router.post('/wetlab/:internId/attempts', authorize('FACULTY', 'HOD'), wetlabController.addAttempt);
+router.put('/wetlab/:internId/attempts/:attemptNumber', authorize('FACULTY', 'HOD'), wetlabController.editAttempt);
 router.get('/wetlab/:internId', wetlabController.getAttempts);
 
 module.exports = router;

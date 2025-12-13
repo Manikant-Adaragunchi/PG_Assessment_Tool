@@ -42,21 +42,29 @@ exports.getInternPerformance = async (req, res) => {
         });
 
         // 2. Wetlab Evaluations
-        const wetlabDocs = await WetlabEvaluation.find({ internId: studentId, status: { $ne: 'TEMPORARY' } })
-            .populate('facultyId', 'firstName lastName')
-            .sort({ createdAt: -1 })
+        const wetlabDocs = await WetlabEvaluation.find({ internId: studentId })
+            .populate('attempts.facultyId', 'firstName lastName')
             .lean();
 
-        const wetlabEvaluations = wetlabDocs.map(doc => ({
-            _id: doc._id,
-            moduleCode: doc.moduleCode,
-            topicName: doc.topicName,
-            totalScore: doc.totalScore,
-            grade: doc.grade,
-            status: doc.status,
-            faculty: doc.facultyId ? `${doc.facultyId.firstName} ${doc.facultyId.lastName}` : 'Unknown',
-            createdAt: doc.createdAt
-        }));
+        const wetlabEvaluations = [];
+        wetlabDocs.forEach(doc => {
+            if (doc.attempts && doc.attempts.length > 0) {
+                doc.attempts.forEach(attempt => {
+                    if (attempt.status !== 'TEMPORARY') {
+                        wetlabEvaluations.push({
+                            _id: attempt._id,
+                            moduleCode: 'WETLAB',
+                            exerciseName: attempt.exerciseName,
+                            totalScore: attempt.totalScore,
+                            grade: attempt.grade,
+                            status: attempt.status,
+                            faculty: attempt.facultyId ? `${attempt.facultyId.firstName} ${attempt.facultyId.lastName}` : 'Unknown',
+                            createdAt: attempt.date || attempt.createdAt
+                        });
+                    }
+                });
+            }
+        });
 
         // 3. Surgery Evaluations (Aggregate attempts)
         const surgeryDocs = await SurgeryEvaluation.find({ internId: studentId })
@@ -86,21 +94,28 @@ exports.getInternPerformance = async (req, res) => {
         });
 
         // 4. Academic Evaluations
-        const academicDocs = await AcademicEvaluation.find({ internId: studentId, status: { $ne: 'TEMPORARY' } })
-            .populate('facultyId', 'firstName lastName')
-            .sort({ createdAt: -1 })
+        const academicDocs = await AcademicEvaluation.find({ internId: studentId })
+            .populate('attempts.facultyId', 'firstName lastName')
             .lean();
 
-        const academicEvaluations = academicDocs.map(doc => ({
-            _id: doc._id,
-            moduleCode: doc.moduleCode,
-            topicName: doc.topicName,
-            totalScore: doc.totalScore,
-            grade: doc.grade,
-            status: doc.status,
-            faculty: doc.facultyId ? `${doc.facultyId.firstName} ${doc.facultyId.lastName}` : 'Unknown',
-            createdAt: doc.createdAt
-        }));
+        const academicEvaluations = [];
+        academicDocs.forEach(doc => {
+            if (doc.attempts && doc.attempts.length > 0) {
+                doc.attempts.forEach(attempt => {
+                    if (attempt.status !== 'TEMPORARY') {
+                        academicEvaluations.push({
+                            _id: attempt._id,
+                            moduleCode: 'ACADEMIC',
+                            evaluationType: attempt.evaluationType,
+                            topic: attempt.topic, // topic is used in new schema
+                            status: attempt.status,
+                            faculty: attempt.facultyId ? `${attempt.facultyId.firstName} ${attempt.facultyId.lastName}` : 'Unknown',
+                            createdAt: attempt.date || attempt.createdAt
+                        });
+                    }
+                });
+            }
+        });
 
         res.status(200).json({
             student: {

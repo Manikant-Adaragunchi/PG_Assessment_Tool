@@ -8,6 +8,8 @@ exports.addAttempt = async (req, res) => {
         const { exerciseName, procedureSteps, tissueHandling, timeManagement, outcome, remarks } = req.body;
         const facultyId = req.user._id;
 
+        console.log('Add WetLab Attempt:', { internId, facultyId, exerciseName, body: req.body });
+
         let evalDoc = await WetLabEvaluation.findOne({ internId });
         if (!evalDoc) {
             evalDoc = new WetLabEvaluation({ internId, attempts: [] });
@@ -51,10 +53,61 @@ exports.addAttempt = async (req, res) => {
         res.status(201).json({
             success: true,
             data: {
-                ...newAttempt,
-                currentStreak: consecutiveStr
+                ...newAttempt
             }
         });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+};
+
+// PUT /wetlab/:internId/attempts/:attemptNumber
+exports.editAttempt = async (req, res) => {
+    try {
+        const { internId, attemptNumber } = req.params;
+        const { exerciseName, procedureSteps, tissueHandling, timeManagement, outcome, remarks } = req.body;
+
+        // Find the document
+        const evalDoc = await WetLabEvaluation.findOne({ internId });
+        if (!evalDoc) {
+            return res.status(404).json({ success: false, error: 'Evaluation record not found' });
+        }
+
+        // Find Attempt
+        const attemptIndex = evalDoc.attempts.findIndex(a => a.attemptNumber.toString() === attemptNumber);
+        if (attemptIndex === -1) {
+            return res.status(404).json({ success: false, error: 'Attempt not found' });
+        }
+
+        const attempt = evalDoc.attempts[attemptIndex];
+
+        // Recalculate Grade if scores changed
+        const totalScore = (procedureSteps || 0) + (tissueHandling || 0) + (timeManagement || 0) + (outcome || 0);
+        const maxScore = 20;
+        const percentage = (totalScore / maxScore) * 100;
+
+        let grade = 'Poor';
+        if (percentage >= 80) grade = 'Excellent';
+        else if (percentage >= 50) grade = 'Average';
+
+        // Update fields
+        attempt.exerciseName = exerciseName || attempt.exerciseName;
+        attempt.scores = {
+            procedureSteps,
+            tissueHandling,
+            timeManagement,
+            outcome
+        };
+        attempt.totalScore = totalScore;
+        attempt.grade = grade;
+        attempt.remarks = remarks || attempt.remarks;
+        // Keep original date & facultyId for now, or update 'updatedAt' if schema supported it.
+
+        evalDoc.attempts[attemptIndex] = attempt;
+        await evalDoc.save();
+
+        res.status(200).json({ success: true, data: attempt });
+
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
     }

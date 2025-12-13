@@ -100,6 +100,15 @@ export const addWetlabAttempt = async (internId, attemptData) => {
     }
 };
 
+export const updateWetlabAttempt = async (internId, attemptNumber, attemptData) => {
+    try {
+        const response = await api.put(`/wetlab/${internId}/attempts/${attemptNumber}`, attemptData);
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
 export const validateIntern = async (identifier) => {
     try {
         const response = await api.get(`/interns/validate/${identifier}`);
