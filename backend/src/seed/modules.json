@@ -1,0 +1,658 @@
+[
+    {
+        "code": "SURGERY",
+        "title": "Cataract Surgery Evaluation",
+        "type": "score",
+        "items": [
+            {
+                "key": "patient_name",
+                "label": "Patient Name",
+                "inputType": "text"
+            },
+            {
+                "key": "grade_of_cataract",
+                "label": "Grade of Cataract",
+                "inputType": "text"
+            },
+            {
+                "key": "draping",
+                "label": "Draping",
+                "inputType": "score"
+            },
+            {
+                "key": "scleral_access",
+                "label": "Scleral Access & Cauterization",
+                "inputType": "score"
+            },
+            {
+                "key": "sclerocorneal_tunnel",
+                "label": "Sclerocorneal Tunnel",
+                "inputType": "score"
+            },
+            {
+                "key": "corneal_entry",
+                "label": "Corneal Entry",
+                "inputType": "score"
+            },
+            {
+                "key": "paracentesis_viscoelastic",
+                "label": "Paracentesis & Viscoelastic Insertion",
+                "inputType": "score"
+            },
+            {
+                "key": "capsulorrhexis_start",
+                "label": "Capsulorrhexis – Commencement of Flap & Follow-through",
+                "inputType": "score"
+            },
+            {
+                "key": "capsulorrhexis_completion",
+                "label": "Capsulorrhexis – Circular Completion",
+                "inputType": "score"
+            },
+            {
+                "key": "hydrodissection",
+                "label": "Hydrodissection – Fluid Wave & Free Prolapse of Nucleus Pole",
+                "inputType": "score"
+            },
+            {
+                "key": "nucleus_prolapse",
+                "label": "Prolapse of Nucleus into Anterior Chamber",
+                "inputType": "score"
+            },
+            {
+                "key": "nucleus_extraction",
+                "label": "Nucleus Extraction",
+                "inputType": "score"
+            },
+            {
+                "key": "ia_technique",
+                "label": "Irrigation & Aspiration Technique (Adequate Cortex Removal)",
+                "inputType": "score"
+            },
+            {
+                "key": "iol_insertion",
+                "label": "Lens Insertion, Rotation & Final IOL Position",
+                "inputType": "score"
+            },
+            {
+                "key": "wound_closure",
+                "label": "Wound Closure (Suturing/Hydration/Security Check)",
+                "inputType": "score"
+            },
+            {
+                "key": "wound_neutrality",
+                "label": "Global Indices – Wound Neutrality (Minimal Eye Rolling / Distortion)",
+                "inputType": "score"
+            },
+            {
+                "key": "eye_positioning",
+                "label": "Eye Positioned Centrally Within Microscope View",
+                "inputType": "score"
+            },
+            {
+                "key": "tissue_handling",
+                "label": "Conjunctival & Corneal Tissue Handling",
+                "inputType": "score"
+            },
+            {
+                "key": "intraocular_spatial_awareness",
+                "label": "Intraocular Spatial Awareness",
+                "inputType": "score"
+            },
+            {
+                "key": "iris_protection",
+                "label": "Iris Protection",
+                "inputType": "score"
+            },
+            {
+                "key": "overall_speed",
+                "label": "Overall Speed & Fluidity of Procedure",
+                "inputType": "score"
+            },
+            {
+                "key": "communication",
+                "label": "Communication With Patient",
+                "inputType": "score"
+            },
+            {
+                "key": "overall_remarks",
+                "label": "Overall Remarks",
+                "inputType": "text"
+            }
+        ]
+    },
+    {
+        "code": "OPD_LASERS_GREEN",
+        "title": "OPD – Lasers Green",
+        "type": "yesno",
+        "items": [
+            {
+                "group": "COGNITIVE",
+                "key": "laser_safety_knowledge",
+                "label": "Has theoretical knowledge of lasers/safety measures"
+            },
+            {
+                "group": "COGNITIVE",
+                "key": "lenses_knowledge",
+                "label": "Has good knowledge of various lenses used for lasers"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "explain_procedure",
+                "label": "Explains procedure to patient with consent"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "explain_post_medications",
+                "label": "Explains post-procedure medications & follow-up schedule"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "proper_head_position",
+                "label": "Proper head position of patient"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "proper_power_setting",
+                "label": "Proper power settings selected & documented"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "burns_outside_bundle",
+                "label": "Burns placed outside papillomacular bundle & vascular arcade"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "burns_quality",
+                "label": "Burns circular, slightly whitish pink, equidistant"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "post_medication_given",
+                "label": "Post-procedure medication given & follow-up scheduled"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "lens_cleaned",
+                "label": "Lens cleaned and replaced"
+            }
+        ]
+    },
+    {
+        "code": "OPD_NDYAG_CAPS",
+        "title": "OPD – Nd:YAG Capsulotomy",
+        "type": "yesno",
+        "items": [
+            {
+                "group": "COGNITIVE",
+                "key": "laser_safety_caps",
+                "label": "Has theoretical knowledge of lasers/safety measures"
+            },
+            {
+                "group": "COGNITIVE",
+                "key": "lens_knowledge_caps",
+                "label": "Good knowledge of lenses used"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "explain_procedure_caps",
+                "label": "Explains procedure to patient with consent"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "explain_post_caps",
+                "label": "Explains post-procedure medications & follow-up"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "proper_head_caps",
+                "label": "Proper head position of patient"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "proper_power_caps",
+                "label": "Proper power settings selected"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "shots_at_posterior_capsule",
+                "label": "Shots aimed at the posterior capsule"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "avoid_iol_pitting",
+                "label": "Avoids IOL pitting/corneal burns"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "lens_cleaned_caps",
+                "label": "Lens cleaned and replaced"
+            }
+        ]
+    },
+    {
+        "code": "OPD_NDYAG_IRIDOTOMY",
+        "title": "OPD – Nd:YAG Iridotomy",
+        "type": "yesno",
+        "items": [
+            {
+                "group": "COGNITIVE",
+                "key": "laser_safety_irid",
+                "label": "Has theoretical knowledge of lasers/safety measures"
+            },
+            {
+                "group": "COGNITIVE",
+                "key": "lens_knowledge_irid",
+                "label": "Has knowledge of lenses used"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "explain_procedure_irid",
+                "label": "Explains procedure to patient with consent"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "explain_post_irid",
+                "label": "Explains post-procedure medications & follow-up"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "proper_head_irid",
+                "label": "Proper head position of patient"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "proper_power_irid",
+                "label": "Proper power settings selected"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "proper_crypt",
+                "label": "Proper crypt selected & adequate opening made"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "avoid_iris_bleed",
+                "label": "Avoids iris bleed / incomplete iridotomy"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "lens_cleaned_irid",
+                "label": "Lens cleaned and replaced"
+            }
+        ]
+    },
+    {
+        "code": "OPD_SLIT_LAMP",
+        "title": "OPD – Slit Lamp Examination",
+        "type": "yesno",
+        "items": [
+            {
+                "group": "COGNITIVE",
+                "key": "sle_principle",
+                "label": "Knowledge of principle of Slit Lamp Examination"
+            },
+            {
+                "group": "COGNITIVE",
+                "key": "sle_techniques",
+                "label": "Knowledge of various SLE techniques"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "sle_consent",
+                "label": "Explains procedure to patient with consent"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "sle_head_position",
+                "label": "Checks proper head position & canthal marker"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "sle_correct_settings",
+                "label": "Uses correct apertures/filters/magnification/lens"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "sle_fundus_view",
+                "label": "Able to visualise fundus using SLE"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "sle_drawings",
+                "label": "Draws cornea/fundus diagrams properly"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "sle_identification",
+                "label": "Identifies normal/abnormal findings"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "sle_switch_off",
+                "label": "Switches off lamp & resets settings"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "sle_cleaning",
+                "label": "Ensures cleaning after infected case"
+            }
+        ]
+    },
+    {
+        "code": "OPD_GONIOSCOPY",
+        "title": "OPD – Gonioscopy",
+        "type": "yesno",
+        "items": [
+            {
+                "group": "COGNITIVE",
+                "key": "gonio_anatomy",
+                "label": "Knowledge of angle anatomy & grading"
+            },
+            {
+                "group": "COGNITIVE",
+                "key": "gonio_principle",
+                "label": "Knowledge of principle of Gonioscopy"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "gonio_consent",
+                "label": "Explains procedure to patient with consent"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "gonio_insertion",
+                "label": "Inserts contact lens without discomfort/air bubble"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "gonio_orientation",
+                "label": "Well oriented to angle structures"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "gonio_identify",
+                "label": "Identifies normal/abnormal findings"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "gonio_indentation",
+                "label": "Performs indentation gonioscopy"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "gonio_3mirror_4mirror",
+                "label": "Able to use 3-mirror and 4-mirror lens"
+            }
+        ]
+    },
+    {
+        "code": "OPD_GOLDMANN",
+        "title": "OPD – Goldmann Applanation Tonometry",
+        "type": "yesno",
+        "items": [
+            {
+                "group": "COGNITIVE",
+                "key": "tonometry_principle",
+                "label": "Knowledge of principle of Applanation Tonometry"
+            },
+            {
+                "group": "COGNITIVE",
+                "key": "tonometry_calibration",
+                "label": "Knows about calibration of instrument"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "tonometry_consent",
+                "label": "Explains procedure to patient with consent"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "tonometry_mires",
+                "label": "Obtains proper mires & accurate IOP reading"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "tonometry_reset",
+                "label": "Resets slit lamp settings after procedure"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "tonometry_disinfect",
+                "label": "Disinfects tip of tonometer"
+            }
+        ]
+    },
+    {
+        "code": "OPD_DIRECT_OPHTH",
+        "title": "OPD – Direct Ophthalmoscopy",
+        "type": "yesno",
+        "items": [
+            {
+                "group": "COGNITIVE",
+                "key": "do_principle",
+                "label": "Knowledge of principle of Direct Ophthalmoscopy"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "do_consent",
+                "label": "Explains procedure to patient with consent"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "do_correct_hand",
+                "label": "Holds DO in correct hand"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "do_settings",
+                "label": "Uses appropriate aperture and filter"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "do_draw_fundus",
+                "label": "Draws fundus diagram properly"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "do_identify",
+                "label": "Identifies normal/abnormal findings"
+            }
+        ]
+    },
+    {
+        "code": "OPD_INDIRECT_OPHTH",
+        "title": "OPD – Indirect Ophthalmoscopy",
+        "type": "yesno",
+        "items": [
+            {
+                "group": "COGNITIVE",
+                "key": "ido_principle",
+                "label": "Knowledge of principle of Indirect Ophthalmoscopy"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "ido_consent",
+                "label": "Explains procedure to patient with consent"
+            },
+            {
+                "group": "AFFECTIVE",
+                "key": "ido_patient_instruction",
+                "label": "Explains eye movement directions to patient"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "ido_headband_fit",
+                "label": "Checks headband for adequate fit"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "ido_correct_settings",
+                "label": "Uses correct aperture and filter"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "ido_draw_amsler",
+                "label": "Draws fundus on Amsler’s chart with color coding"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "ido_identify",
+                "label": "Identifies normal/abnormal findings"
+            },
+            {
+                "group": "PSYCHOMOTOR",
+                "key": "ido_indentation",
+                "label": "Performs indentation"
+            }
+        ]
+    },
+    {
+        "code": "ACADEMIC_SEMINAR",
+        "title": "Academic – Seminar",
+        "type": "score",
+        "items": [
+            {
+                "key": "topic_name",
+                "label": "Topic Name",
+                "inputType": "text"
+            },
+            {
+                "key": "item1",
+                "label": "Item 1 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item2",
+                "label": "Item 2 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item3",
+                "label": "Item 3 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item4",
+                "label": "Item 4 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item5",
+                "label": "Item 5 Score",
+                "inputType": "score"
+            }
+        ]
+    },
+    {
+        "code": "ACADEMIC_JCR",
+        "title": "Academic – Journal Club Review",
+        "type": "score",
+        "items": [
+            {
+                "key": "topic_name",
+                "label": "Topic Name",
+                "inputType": "text"
+            },
+            {
+                "key": "item1",
+                "label": "Item 1 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item2",
+                "label": "Item 2 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item3",
+                "label": "Item 3 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item4",
+                "label": "Item 4 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item5",
+                "label": "Item 5 Score",
+                "inputType": "score"
+            }
+        ]
+    },
+    {
+        "code": "ACADEMIC_CASE",
+        "title": "Academic – Case Presentation",
+        "type": "score",
+        "items": [
+            {
+                "key": "topic_name",
+                "label": "Topic Name",
+                "inputType": "text"
+            },
+            {
+                "key": "item1",
+                "label": "Item 1 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item2",
+                "label": "Item 2 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item3",
+                "label": "Item 3 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item4",
+                "label": "Item 4 Score",
+                "inputType": "score"
+            },
+            {
+                "key": "item5",
+                "label": "Item 5 Score",
+                "inputType": "score"
+            }
+        ]
+    },
+    {
+        "code": "WETLAB",
+        "title": "Wet Lab Evaluation",
+        "type": "score",
+        "items": [
+            {
+                "key": "activity_name",
+                "label": "Activity Name",
+                "inputType": "text"
+            },
+            {
+                "key": "microscope_handling",
+                "label": "Microscope Handling",
+                "inputType": "score"
+            },
+            {
+                "key": "instrument_handling",
+                "label": "Instrument Handling",
+                "inputType": "score"
+            },
+            {
+                "key": "suturing_technique",
+                "label": "Suturing Technique",
+                "inputType": "score"
+            },
+            {
+                "key": "hand_eye_coordination",
+                "label": "Hand–Eye Coordination",
+                "inputType": "score"
+            },
+            {
+                "key": "overall_performance",
+                "label": "Overall Performance",
+                "inputType": "score"
+            }
+        ]
+    }
+]

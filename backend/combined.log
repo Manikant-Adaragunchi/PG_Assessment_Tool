@@ -1,0 +1,691 @@
+{"level":"info","message":"MongoDB Connected for Seeding","service":"pg-assessment-tool","timestamp":"2025-12-12T13:36:14.990Z"}
+{"level":"info","message":"Cleared existing Evaluation Modules","service":"pg-assessment-tool","timestamp":"2025-12-12T13:36:15.009Z"}
+{"level":"info","message":"Seeded 13 Evaluation Modules successfully","service":"pg-assessment-tool","timestamp":"2025-12-12T13:36:15.060Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T13:36:22.249Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T13:36:22.255Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T13:42:45.105Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T13:42:45.111Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T14:20:23.647Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T14:20:23.651Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T14:28:41.119Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T14:28:41.124Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T14:52:34.577Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T14:52:34.582Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T14:59:14.090Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T14:59:14.099Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T15:08:51.931Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T15:08:51.938Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T15:08:53.208Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T15:08:53.215Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T15:08:54.307Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T15:08:54.314Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T15:08:57.317Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T15:08:57.323Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T15:57:18.998Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T15:57:19.004Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T15:57:23.174Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T15:57:23.180Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T15:57:28.678Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T15:57:28.683Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:11:33.799Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:11:33.805Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:11:35.869Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:11:35.873Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:11:37.825Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:11:37.830Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:11:39.726Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:11:39.731Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:13:18.144Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:13:18.149Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:13:19.641Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:13:19.647Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:38:07.075Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:38:07.082Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:42:48.516Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:42:48.523Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:43:28.923Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:43:28.930Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:44:57.077Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:44:57.085Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:45:26.335Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:45:26.344Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:46:55.391Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:46:55.403Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:49:19.056Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:49:19.065Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:54:53.580Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:54:53.589Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:56:48.706Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:56:48.718Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T16:57:19.534Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T16:57:19.541Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T17:10:59.843Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T17:10:59.847Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T17:15:43.018Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T17:15:43.023Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T17:17:10.293Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T17:17:10.297Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T17:22:19.854Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T17:22:19.858Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T17:25:05.496Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T17:25:05.501Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:26:20.594Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:27:08.509Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T17:30:09.960Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T17:30:09.965Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:30:52.560Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T17:33:42.543Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T17:33:42.550Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:34:37.129Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:35:38.916Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:35:52.611Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:35:59.519Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T17:37:25.300Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T17:37:25.306Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:37:42.230Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:38:04.232Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:42:03.574Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:42:39.026Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:44:02.576Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:45:12.609Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:45:25.982Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:45:32.020Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:45:59.547Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:48:47.213Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:52:40.587Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:53:03.155Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:53:03.186Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:53:11.222Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:53:11.239Z"}
+{"level":"info","message":"GET /api/admin/export/batch/123 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:53:18.550Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T17:58:46.489Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T17:58:46.499Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:59:19.704Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:59:19.726Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:59:42.049Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:59:42.155Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:59:42.180Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:59:52.901Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T17:59:52.916Z"}
+{"level":"info","message":"POST /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:02:38.526Z"}
+{"code":20,"codeName":"IllegalOperation","level":"error","message":"Create Batch Error: Transaction numbers are only allowed on a replica set member or mongos","ok":0,"service":"pg-assessment-tool","stack":"MongoServerError: Transaction numbers are only allowed on a replica set member or mongos\n    at Connection.onMessage (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:231:30)\n    at MessageStream.<anonymous> (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:61:60)\n    at MessageStream.emit (node:events:518:28)\n    at processIncomingData (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:125:16)\n    at MessageStream._write (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Writable.write (node:internal/streams/writable:510:10)\n    at Socket.ondata (node:internal/streams/readable:1009:22)\n    at Socket.emit (node:events:518:28)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n    at Readable.push (node:internal/streams/readable:392:5)\n    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)","timestamp":"2025-12-12T18:02:38.761Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:03:03.988Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:03:04.001Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:04:59.010Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:04:59.015Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:05:02.140Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:05:02.156Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:05:02.477Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:05:02.483Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:05:49.773Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:05:49.784Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:10:19.606Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:10:19.611Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:10:42.559Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:10:42.577Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:11:03.889Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:11:04.128Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:11:04.145Z"}
+{"level":"info","message":"POST /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:13:35.405Z"}
+{"level":"info","message":"Created Intern manikantsadaragunchi1805@gmail.com with default password 'password123'","service":"pg-assessment-tool","timestamp":"2025-12-12T18:13:35.589Z"}
+{"level":"info","message":"Created Intern swatikmadapur@gmail.com with default password 'password123'","service":"pg-assessment-tool","timestamp":"2025-12-12T18:13:35.755Z"}
+{"level":"info","message":"Created Intern sidram1345@gmail.com with default password 'password123'","service":"pg-assessment-tool","timestamp":"2025-12-12T18:13:35.883Z"}
+{"level":"info","message":"Created Intern harishpu@gmail.com with default password 'password123'","service":"pg-assessment-tool","timestamp":"2025-12-12T18:13:36.056Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:13:39.756Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:13:39.772Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:13:44.649Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:13:44.658Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:14:24.426Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:14:26.688Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:14:42.024Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:14:42.037Z"}
+{"level":"info","message":"GET /api/admin/export/batch/123 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:14:45.874Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:15:26.363Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:15:26.371Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:15:32.934Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:15:33.158Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:15:33.170Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:17:51.146Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:17:51.150Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:17:52.596Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:17:52.601Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:25:16.962Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:25:16.967Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:27:59.893Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:27:59.898Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:28:13.382Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:28:13.767Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:28:13.795Z"}
+{"level":"info","message":"POST /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:30:09.893Z"}
+{"level":"info","message":"[MOCK EMAIL] To: shankaradaragunchi126@gmail.com | Pwd: 6A8C27A2 | Role: INTERN","service":"pg-assessment-tool","timestamp":"2025-12-12T18:30:10.179Z"}
+{"level":"info","message":"Created Intern shankaradaragunchi126@gmail.com with code [HIDDEN]","service":"pg-assessment-tool","timestamp":"2025-12-12T18:30:10.180Z"}
+{"level":"info","message":"[MOCK EMAIL] To: vdafffar@gmail.com | Pwd: B2C53DFC | Role: INTERN","service":"pg-assessment-tool","timestamp":"2025-12-12T18:30:10.368Z"}
+{"level":"info","message":"Created Intern vdafffar@gmail.com with code [HIDDEN]","service":"pg-assessment-tool","timestamp":"2025-12-12T18:30:10.371Z"}
+{"level":"info","message":"[MOCK EMAIL] To: qewygieqwPO5@gmail.com | Pwd: 283F1153 | Role: INTERN","service":"pg-assessment-tool","timestamp":"2025-12-12T18:30:10.614Z"}
+{"level":"info","message":"Created Intern qewygieqwPO5@gmail.com with code [HIDDEN]","service":"pg-assessment-tool","timestamp":"2025-12-12T18:30:10.615Z"}
+{"level":"info","message":"[MOCK EMAIL] To: cbncksa@gmail.com | Pwd: 0F6F9C05 | Role: INTERN","service":"pg-assessment-tool","timestamp":"2025-12-12T18:30:10.831Z"}
+{"level":"info","message":"Created Intern cbncksa@gmail.com with code [HIDDEN]","service":"pg-assessment-tool","timestamp":"2025-12-12T18:30:10.832Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:30:14.822Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:30:14.843Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:31:00.041Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:31:00.051Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:31:32.570Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"shankaradaragunchi126@gmail.com"},"level":"error","message":"Create Faculty Error: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"shankaradaragunchi126@gmail.com\" }","service":"pg-assessment-tool","stack":"MongoServerError: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"shankaradaragunchi126@gmail.com\" }\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\operations\\insert.js:53:33\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:333:25\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:207:17\n    at handleOperationResult (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:323:20)\n    at Connection.onMessage (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:243:9)\n    at MessageStream.<anonymous> (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:61:60)\n    at MessageStream.emit (node:events:518:28)\n    at processIncomingData (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:125:16)\n    at MessageStream._write (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Writable.write (node:internal/streams/writable:510:10)\n    at Socket.ondata (node:internal/streams/readable:1009:22)\n    at Socket.emit (node:events:518:28)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)","timestamp":"2025-12-12T18:31:32.749Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:32:14.456Z"}
+{"level":"info","message":"[MOCK EMAIL] To: sonumpatil9606@gmail.com | Pwd: F81F4334 | Role: FACULTY","service":"pg-assessment-tool","timestamp":"2025-12-12T18:32:14.699Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:32:17.794Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:32:37.936Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:32:37.953Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:32:41.702Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:32:41.721Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:32:46.910Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:32:46.926Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:33:06.439Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:33:06.455Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:33:11.813Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:33:11.825Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:33:39.564Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:33:39.588Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:37:41.044Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:37:41.052Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:38:18.591Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:38:18.812Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:38:18.835Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:38:23.358Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:38:23.398Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:38:46.063Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:38:46.074Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:40:36.456Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:40:53.287Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:40:53.429Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:40:53.446Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:40:58.559Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:40:58.573Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:00.477Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:00.491Z"}
+{"level":"info","message":"DELETE /api/admin/faculty/693c5fae3dd42399173648fa - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:05.707Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:05.745Z"}
+{"level":"info","message":"DELETE /api/admin/faculty/693c5d087be6ef1d9a8ff672 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:10.790Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:10.810Z"}
+{"level":"info","message":"DELETE /api/admin/faculty/693c5d087be6ef1d9a8ff671 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:15.428Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:25.206Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:25.221Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:30.951Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:30.965Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:43.841Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:41:43.851Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:47:06.311Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:47:06.326Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:47:11.588Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:47:11.603Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:47:16.945Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:47:16.959Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:47:22.326Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:47:22.335Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:47:23.846Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:47:23.862Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:29.691Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:29.713Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:31.414Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:31.527Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:32.738Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:32.755Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:35.651Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:35.681Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:36.882Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:36.897Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:37.922Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:37.932Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:38.864Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:38.876Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:39.557Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:39.572Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:39.755Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:39.771Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:39.978Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:39.986Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:40.581Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:40.594Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:40.790Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:50:40.805Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:51:14.575Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:51:14.744Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:51:14.759Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:51:17.758Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:51:17.777Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:51:24.215Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:51:24.229Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:51:31.606Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:51:31.614Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:51:32.564Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:51:32.579Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:52:36.901Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:52:36.908Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:52:38.973Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:52:38.983Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:52:40.470Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:52:46.468Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:52:46.483Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:53:21.000Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:53:21.191Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:53:21.212Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:53:24.247Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:53:24.262Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:53:36.371Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:53:36.388Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:53:42.180Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:53:42.189Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:54:03.981Z"}
+{"level":"info","message":"[MOCK EMAIL] To: EDQf@gmail.com | Pwd: BADD2F63 | Role: FACULTY","service":"pg-assessment-tool","timestamp":"2025-12-12T18:54:04.096Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:54:06.300Z"}
+{"level":"info","message":"PUT /api/admin/faculty/693c64cbb6f3e4fe2bb595af - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:54:10.264Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:54:12.201Z"}
+{"level":"info","message":"DELETE /api/admin/faculty/693c64cbb6f3e4fe2bb595af - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:54:19.615Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:54:19.636Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:54:21.630Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:54:21.643Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:28.909Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:28.915Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:36.261Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:36.304Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:42.915Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:43.097Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:43.121Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:45.784Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:45.808Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:53.875Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:53.885Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:54.970Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:55.004Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:56.509Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:56.524Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:58.126Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:55:58.142Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:56:15.121Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:56:15.139Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:56:17.284Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:56:17.299Z"}
+{"level":"info","message":"DELETE /api/admin/batches/693c5b4faac7e11f45403f24 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:56:24.213Z"}
+{"level":"info","message":"DELETE /api/admin/batches/693c5f313dd42399173648d6 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:56:30.000Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:56:34.608Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T18:56:34.624Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:58:31.864Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:58:31.871Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:59:04.140Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:59:04.148Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T18:59:42.444Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T18:59:42.452Z"}
+{"level":"info","message":"MongoDB Connected for Seeding","service":"pg-assessment-tool","timestamp":"2025-12-12T19:00:28.759Z"}
+{"level":"info","message":"Cleared existing Evaluation Modules","service":"pg-assessment-tool","timestamp":"2025-12-12T19:00:28.778Z"}
+{"level":"info","message":"Seeded 13 Evaluation Modules successfully","service":"pg-assessment-tool","timestamp":"2025-12-12T19:00:28.808Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T19:06:32.823Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T19:06:32.832Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T19:07:12.356Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T19:07:12.363Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:07:55.784Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:07:56.029Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:07:56.072Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:00.029Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:00.048Z"}
+{"level":"info","message":"DELETE /api/admin/faculty/693c667ebb1f3f1515d84689 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:05.824Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:05.855Z"}
+{"level":"info","message":"DELETE /api/admin/faculty/693c667ebb1f3f1515d84687 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:10.050Z"}
+{"level":"info","message":"DELETE /api/admin/faculty/693c667ebb1f3f1515d8468b - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:17.110Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:17.130Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:19.939Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:19.952Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:22.255Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:22.271Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:24.412Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:24.422Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:25.502Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:25.518Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:33.649Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:33.658Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:34.644Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:34.659Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:36.791Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:08:36.802Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:14:33.883Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:14:34.098Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:14:34.154Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:14:36.954Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:14:36.964Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:14:44.339Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:14:44.369Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:15:00.725Z"}
+{"level":"info","message":"[MOCK EMAIL] To: shankaradaragunchi126@gmail.com | Pwd: A8A2FED4 | Role: FACULTY","service":"pg-assessment-tool","timestamp":"2025-12-12T19:15:00.822Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:15:02.762Z"}
+{"level":"info","message":"DELETE /api/admin/faculty/693c69b49a82a68dfbfde0d9 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:15:29.350Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:15:29.367Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T19:16:07.906Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T19:16:07.914Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:16:09.460Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T19:16:14.115Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T19:16:14.122Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T19:16:16.188Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T19:16:16.196Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T19:16:18.295Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T19:16:18.304Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T19:16:20.338Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T19:16:20.347Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T19:26:04.457Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T19:26:04.467Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:26:34.489Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:26:34.819Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:26:34.846Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:26:41.087Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:26:41.106Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:27:16.887Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:27:19.900Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"manikantsadaragunchi1805@gmail.com"},"level":"error","message":"Create Faculty Error: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"manikantsadaragunchi1805@gmail.com\" }","service":"pg-assessment-tool","stack":"MongoServerError: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"manikantsadaragunchi1805@gmail.com\" }\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\operations\\insert.js:53:33\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:333:25\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:207:17\n    at handleOperationResult (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:323:20)\n    at Connection.onMessage (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:243:9)\n    at MessageStream.<anonymous> (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:61:60)\n    at MessageStream.emit (node:events:518:28)\n    at processIncomingData (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:125:16)\n    at MessageStream._write (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Writable.write (node:internal/streams/writable:510:10)\n    at Socket.ondata (node:internal/streams/readable:1009:22)\n    at Socket.emit (node:events:518:28)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)","timestamp":"2025-12-12T19:27:20.124Z"}
+{"level":"info","message":"Email sent: <20293ece-8e11-729b-9f2a-4ad4e3a4dd7d@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-12T19:27:20.878Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:27:47.609Z"}
+{"level":"info","message":"DELETE /api/admin/faculty/693c6c94dd39cd27768ca88b - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:28:56.345Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:28:56.389Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:29:00.143Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:29:00.169Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:29:04.129Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:29:04.144Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:15.632Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:15.642Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:16.416Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:16.427Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:17.177Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:17.187Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:19.772Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:19.785Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:20.637Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:20.648Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:23.069Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:23.092Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:39.493Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:39.744Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:39.760Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:42.091Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:30:42.106Z"}
+{"level":"info","message":"POST /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:36:13.874Z"}
+{"level":"info","message":"Email sent: <a9ec8a5e-cb07-f1cc-72ab-6dd26d5a52a9@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-12T19:36:17.086Z"}
+{"level":"info","message":"Email sent: <62b63091-2ead-aab6-16a5-afe7217c4be0@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-12T19:36:17.418Z"}
+{"level":"info","message":"Email sent: <53b9a50a-37a7-0c0e-f5a0-8decee66a139@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-12T19:36:17.637Z"}
+{"level":"info","message":"Email sent: <03e76db5-3c22-aca6-1b64-8765e201cf4d@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-12T19:36:17.786Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:36:18.369Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:36:18.386Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:38:54.878Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:38:54.895Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:38:59.121Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:38:59.146Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:06.294Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:06.306Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:16.627Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:16.649Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:26.100Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:26.109Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:27.222Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:27.240Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:36.432Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:36.447Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:39.302Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:39:39.322Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:41:26.573Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/693c6eaddd39cd27768ca8d0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:41:41.708Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/693c6eaddd39cd27768ca8d0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:41:41.721Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/693c6eaddd39cd27768ca8d0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:41:44.903Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:42:56.200Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:42:56.480Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:42:56.496Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:43:01.655Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:43:01.667Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:44:26.472Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:44:28.085Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sonumpatil9606@gmail.com"},"level":"error","message":"Create Faculty Error: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"sonumpatil9606@gmail.com\" }","service":"pg-assessment-tool","stack":"MongoServerError: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"sonumpatil9606@gmail.com\" }\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\operations\\insert.js:53:33\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:333:25\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:207:17\n    at handleOperationResult (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:323:20)\n    at Connection.onMessage (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:243:9)\n    at MessageStream.<anonymous> (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:61:60)\n    at MessageStream.emit (node:events:518:28)\n    at processIncomingData (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:125:16)\n    at MessageStream._write (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Writable.write (node:internal/streams/writable:510:10)\n    at Socket.ondata (node:internal/streams/readable:1009:22)\n    at Socket.emit (node:events:518:28)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)","timestamp":"2025-12-12T19:44:28.299Z"}
+{"level":"info","message":"Email sent: <d373fdc7-5a22-57f1-ebe1-de5dcf0e51a1@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-12T19:44:30.375Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:44:34.658Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:45:57.257Z"}
+{"level":"info","message":"GET /api/surgery/2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:46:32.706Z"}
+{"level":"info","message":"GET /api/surgery/2s - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:46:33.110Z"}
+{"level":"info","message":"GET /api/surgery/2sd - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:46:33.384Z"}
+{"level":"info","message":"GET /api/surgery/2sd2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:46:34.682Z"}
+{"level":"info","message":"GET /api/surgery/2sd23 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:46:34.929Z"}
+{"level":"info","message":"GET /api/surgery/2sd23c - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:46:36.078Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:46:36.257Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:46:37.104Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs05 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:46:37.723Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs054 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:46:37.896Z"}
+{"level":"info","message":"POST /api/surgery/2sd23cs054/attempts - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:47:38.298Z"}
+{"kind":"ObjectId","level":"error","message":"Surgery Add Attempt Error: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"","path":"_id","reason":{},"service":"pg-assessment-tool","stack":"CastError: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"\n    at model.Query.exec (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:4921:21)\n    at Query.then (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:5020:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","stringValue":"\"2sd23cs054\"","timestamp":"2025-12-12T19:47:38.305Z","value":"2sd23cs054","valueType":"string"}
+{"level":"info","message":"POST /api/surgery/2sd23cs054/attempts - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:48:07.829Z"}
+{"kind":"ObjectId","level":"error","message":"Surgery Add Attempt Error: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"","path":"_id","reason":{},"service":"pg-assessment-tool","stack":"CastError: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"\n    at model.Query.exec (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:4921:21)\n    at Query.then (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:5020:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","stringValue":"\"2sd23cs054\"","timestamp":"2025-12-12T19:48:07.837Z","value":"2sd23cs054","valueType":"string"}
+{"level":"info","message":"POST /api/surgery/2sd23cs054/attempts - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:48:38.139Z"}
+{"kind":"ObjectId","level":"error","message":"Surgery Add Attempt Error: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"","path":"_id","reason":{},"service":"pg-assessment-tool","stack":"CastError: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"\n    at model.Query.exec (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:4921:21)\n    at Query.then (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:5020:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","stringValue":"\"2sd23cs054\"","timestamp":"2025-12-12T19:48:38.146Z","value":"2sd23cs054","valueType":"string"}
+{"level":"info","message":"GET /api/academic/2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:49:20.180Z"}
+{"level":"info","message":"GET /api/academic/2s - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:49:21.173Z"}
+{"level":"info","message":"GET /api/academic/2sd - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:49:21.409Z"}
+{"level":"info","message":"GET /api/academic/2sd2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:49:21.826Z"}
+{"level":"info","message":"GET /api/academic/2sd23 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:49:22.054Z"}
+{"level":"info","message":"GET /api/academic/2sd23c - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:49:22.551Z"}
+{"level":"info","message":"GET /api/academic/2sd23cs - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:49:22.715Z"}
+{"level":"info","message":"GET /api/academic/2sd23cs1 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:49:23.986Z"}
+{"level":"info","message":"GET /api/academic/2sd23cs10 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:49:24.368Z"}
+{"level":"info","message":"GET /api/academic/2sd23cs109 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:49:25.108Z"}
+{"level":"info","message":"POST /api/academic/2sd23cs109/attempts - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:49:42.745Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:51:05.311Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:51:05.583Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:51:05.600Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:51:09.885Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:51:09.896Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:52:15.836Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:52:18.352Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"skgoudasanagoudar@gmail.com"},"level":"error","message":"Create Faculty Error: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"skgoudasanagoudar@gmail.com\" }","service":"pg-assessment-tool","stack":"MongoServerError: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"skgoudasanagoudar@gmail.com\" }\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\operations\\insert.js:53:33\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:333:25\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:207:17\n    at handleOperationResult (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:323:20)\n    at Connection.onMessage (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:243:9)\n    at MessageStream.<anonymous> (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:61:60)\n    at MessageStream.emit (node:events:518:28)\n    at processIncomingData (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:125:16)\n    at MessageStream._write (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Writable.write (node:internal/streams/writable:510:10)\n    at Socket.ondata (node:internal/streams/readable:1009:22)\n    at Socket.emit (node:events:518:28)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)","timestamp":"2025-12-12T19:52:18.555Z"}
+{"level":"info","message":"Email sent: <f887b622-5d92-565b-5ad9-1fa27a24c0d3@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-12T19:52:21.328Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:52:22.942Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:53:52.142Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:56:50.486Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:56:50.765Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:56:50.782Z"}
+{"level":"info","message":"GET /api/admin/export/batch/123 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:56:55.150Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:58:17.520Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:58:17.786Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:58:17.802Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:58:32.801Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:58:32.821Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:58:45.391Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:58:45.404Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:58:47.174Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:58:47.194Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:59:10.541Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:59:10.553Z"}
+{"level":"info","message":"DELETE /api/admin/faculty/693c709add39cd27768ca941 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:59:34.311Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:59:34.341Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:59:40.613Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T19:59:40.629Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:02:47.660Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:02:47.672Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:03:00.282Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:03:00.291Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:05:53.662Z"}
+{"level":"info","message":"GET /api/surgery/2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:06:47.451Z"}
+{"level":"info","message":"GET /api/surgery/2s - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:06:47.791Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T20:09:00.533Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T20:09:00.538Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:10:01.925Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:10:05.209Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:10:05.241Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T20:25:05.250Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T20:25:05.255Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T20:25:17.970Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T20:25:17.975Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:26:29.777Z"}
+{"level":"info","message":"GET /api/surgery/2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:26:51.183Z"}
+{"level":"info","message":"GET /api/surgery/2s - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:26:51.696Z"}
+{"level":"info","message":"GET /api/surgery/2sd - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:26:52.004Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:26:54.821Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:26:54.864Z"}
+{"level":"info","message":"GET /api/surgery/2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:27:10.608Z"}
+{"level":"info","message":"GET /api/surgery/2s - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:27:11.258Z"}
+{"level":"info","message":"GET /api/surgery/2sd - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:27:11.531Z"}
+{"level":"info","message":"GET /api/surgery/2sd2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:27:11.872Z"}
+{"level":"info","message":"GET /api/surgery/2sd23 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:27:12.126Z"}
+{"level":"info","message":"GET /api/surgery/2sd23c - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:27:13.609Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:27:13.803Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:27:14.454Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs05 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:27:15.040Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs054 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:27:15.220Z"}
+{"level":"info","message":"POST /api/surgery/2sd23cs054/attempts - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:30:08.508Z"}
+{"kind":"ObjectId","level":"error","message":"Surgery Add Attempt Error: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"","path":"_id","reason":{},"service":"pg-assessment-tool","stack":"CastError: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"\n    at model.Query.exec (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:4921:21)\n    at Query.then (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:5020:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","stringValue":"\"2sd23cs054\"","timestamp":"2025-12-12T20:30:08.518Z","value":"2sd23cs054","valueType":"string"}
+{"level":"info","message":"POST /api/surgery/2sd23cs054/attempts - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:30:49.816Z"}
+{"kind":"ObjectId","level":"error","message":"Surgery Add Attempt Error: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"","path":"_id","reason":{},"service":"pg-assessment-tool","stack":"CastError: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"\n    at model.Query.exec (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:4921:21)\n    at Query.then (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:5020:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","stringValue":"\"2sd23cs054\"","timestamp":"2025-12-12T20:30:49.823Z","value":"2sd23cs054","valueType":"string"}
+{"level":"info","message":"POST /api/surgery/2sd23cs054/attempts - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:31:59.529Z"}
+{"kind":"ObjectId","level":"error","message":"Surgery Add Attempt Error: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"","path":"_id","reason":{},"service":"pg-assessment-tool","stack":"CastError: Cast to ObjectId failed for value \"2sd23cs054\" (type string) at path \"_id\" for model \"User\"\n    at model.Query.exec (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:4921:21)\n    at Query.then (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongoose\\lib\\query.js:5020:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","stringValue":"\"2sd23cs054\"","timestamp":"2025-12-12T20:31:59.536Z","value":"2sd23cs054","valueType":"string"}
+{"level":"info","message":"GET /api/surgery/2sd23cs054 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:37:00.502Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs054 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:37:02.293Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:50:51.393Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:50:54.432Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:50:54.446Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:51:08.588Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:51:08.833Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:51:08.850Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:52:54.864Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:52:54.875Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:53:19.560Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:53:19.791Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:53:19.803Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:53:28.431Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:53:28.444Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:53:29.512Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:53:29.520Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:55:59.330Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:55:59.518Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:55:59.531Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:56:01.951Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:56:01.970Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:56:03.083Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:56:03.094Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:58:48.653Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:58:48.833Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-12T20:58:48.844Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-12T21:00:46.148Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-12T21:00:46.161Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T03:03:41.659Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T03:03:41.665Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:04:23.648Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:04:23.953Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:04:23.985Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:04:27.547Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:04:27.559Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:05:02.435Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:05:04.534Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"madapurswati132005@gmail.com"},"level":"error","message":"Create Faculty Error: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"madapurswati132005@gmail.com\" }","service":"pg-assessment-tool","stack":"MongoServerError: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"madapurswati132005@gmail.com\" }\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\operations\\insert.js:53:33\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:333:25\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:207:17\n    at handleOperationResult (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:323:20)\n    at Connection.onMessage (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:243:9)\n    at MessageStream.<anonymous> (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:61:60)\n    at MessageStream.emit (node:events:518:28)\n    at processIncomingData (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:125:16)\n    at MessageStream._write (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Writable.write (node:internal/streams/writable:510:10)\n    at Socket.ondata (node:internal/streams/readable:1009:22)\n    at Socket.emit (node:events:518:28)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)","timestamp":"2025-12-13T03:05:04.612Z"}
+{"level":"info","message":"Email sent: <3bcc256d-f674-ce35-5c4f-c1130356305d@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-13T03:05:07.125Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:05:08.944Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:24.076Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:28.496Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:28.513Z"}
+{"level":"info","message":"GET /api/surgery/2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:38.904Z"}
+{"level":"info","message":"GET /api/surgery/22 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:42.616Z"}
+{"level":"info","message":"GET /api/surgery/2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:44.306Z"}
+{"level":"info","message":"GET /api/surgery/2s - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:44.642Z"}
+{"level":"info","message":"GET /api/surgery/2sd - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:44.948Z"}
+{"level":"info","message":"GET /api/surgery/2sd2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:45.171Z"}
+{"level":"info","message":"GET /api/surgery/2sd23 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:45.381Z"}
+{"level":"info","message":"GET /api/surgery/2sd23c - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:45.867Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:46.027Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs1 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:46.521Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs10 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:46.906Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs109 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:06:47.089Z"}
+{"level":"info","message":"GET /api/academic/2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:12.444Z"}
+{"level":"info","message":"GET /api/academic/2s - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:12.818Z"}
+{"level":"info","message":"GET /api/academic/2sd - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:13.130Z"}
+{"level":"info","message":"GET /api/academic/2sd2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:13.506Z"}
+{"level":"info","message":"GET /api/academic/2sd23 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:13.795Z"}
+{"level":"info","message":"GET /api/academic/2sd23c - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:14.213Z"}
+{"level":"info","message":"GET /api/academic/2sd23cs - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:14.587Z"}
+{"level":"info","message":"GET /api/academic/2sd23cs0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:15.769Z"}
+{"level":"info","message":"GET /api/academic/2sd23cs05 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:16.142Z"}
+{"level":"info","message":"GET /api/academic/2sd23cs054 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:16.473Z"}
+{"level":"info","message":"POST /api/academic/2sd23cs054/attempts - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:19.442Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:35.549Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T03:08:35.561Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T06:40:16.809Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T06:40:16.817Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:03:10.474Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:03:10.648Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:03:10.690Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:03:18.180Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:03:18.204Z"}
+{"level":"info","message":"POST /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:17.080Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:19.579Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:19.590Z"}
+{"level":"info","message":"Email sent: <2ac71262-2e7f-9962-1003-d92d4fc74385@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:20.847Z"}
+{"level":"info","message":"Email sent: <f2b734bb-52c2-3d06-7a8a-aeb150781788@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:20.849Z"}
+{"level":"info","message":"Email sent: <5faddf57-c747-45bc-c20b-a9aa3d18b669@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:20.935Z"}
+{"level":"info","message":"Email sent: <8701395d-d971-2b3d-1710-790923a79974@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:21.012Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:24.102Z"}
+{"level":"info","message":"GET /api/admin/batches - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:24.117Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:28.488Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:28.495Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:31.200Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:31.213Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:35.576Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:05:35.583Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:06:08.440Z"}
+{"level":"info","message":"POST /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:06:10.526Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"nitagkulkarni@gmail.com"},"level":"error","message":"Create Faculty Error: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"nitagkulkarni@gmail.com\" }","service":"pg-assessment-tool","stack":"MongoServerError: E11000 duplicate key error collection: pg-assessment-tool.users index: email_1 dup key: { email: \"nitagkulkarni@gmail.com\" }\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\operations\\insert.js:53:33\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:333:25\n    at C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:207:17\n    at handleOperationResult (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\sdam\\server.js:323:20)\n    at Connection.onMessage (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:243:9)\n    at MessageStream.<anonymous> (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\connection.js:61:60)\n    at MessageStream.emit (node:events:518:28)\n    at processIncomingData (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:125:16)\n    at MessageStream._write (C:\\Users\\manik\\OneDrive\\Desktop\\pg-assessment-tool\\backend\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Writable.write (node:internal/streams/writable:510:10)\n    at Socket.ondata (node:internal/streams/readable:1009:22)\n    at Socket.emit (node:events:518:28)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)","timestamp":"2025-12-13T07:06:10.609Z"}
+{"level":"info","message":"Email sent: <d934f29c-abcb-ab5c-2631-9d5b06d4b9e8@hospital.com>","service":"pg-assessment-tool","timestamp":"2025-12-13T07:06:12.042Z"}
+{"level":"info","message":"GET /api/admin/faculty - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:06:13.648Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:06:56.569Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:06:59.963Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:06:59.973Z"}
+{"level":"info","message":"GET /api/surgery/2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:07:15.846Z"}
+{"level":"info","message":"GET /api/surgery/2s - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:07:16.181Z"}
+{"level":"info","message":"GET /api/surgery/2sd - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:07:16.341Z"}
+{"level":"info","message":"GET /api/surgery/2sd2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:07:16.510Z"}
+{"level":"info","message":"GET /api/surgery/2sd23 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:07:16.673Z"}
+{"level":"info","message":"GET /api/surgery/2sd23c - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:07:17.467Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:07:17.601Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:07:18.160Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs05 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:07:18.686Z"}
+{"level":"info","message":"GET /api/surgery/2sd23cs054 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:07:18.796Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:08:03.655Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/2s - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:08:03.891Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/2sd - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:08:04.059Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/2sd2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:08:04.252Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/2sd23 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:08:04.386Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/2sd23c - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:08:04.776Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/2sd23cs - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:08:04.935Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/2sd23cs0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:08:05.271Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/2sd23cs05 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:08:05.754Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/2sd23cs054 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:08:05.877Z"}
+{"level":"info","message":"GET /api/wetlab/2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:09.244Z"}
+{"level":"info","message":"GET /api/wetlab/2s - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:09.510Z"}
+{"level":"info","message":"GET /api/wetlab/2sd - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:09.708Z"}
+{"level":"info","message":"GET /api/wetlab/2sd2 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:09.979Z"}
+{"level":"info","message":"GET /api/wetlab/2sd23 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:10.148Z"}
+{"level":"info","message":"GET /api/wetlab/2sd23c - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:10.470Z"}
+{"level":"info","message":"GET /api/wetlab/2sd23cs - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:10.741Z"}
+{"level":"info","message":"GET /api/wetlab/2sd23cs0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:11.024Z"}
+{"level":"info","message":"GET /api/wetlab/2sd23cs05 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:11.405Z"}
+{"level":"info","message":"GET /api/wetlab/2sd23cs054 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:11.569Z"}
+{"level":"info","message":"POST /api/wetlab/2sd23cs054/attempts - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:14.108Z"}
+{"level":"info","message":"POST /api/wetlab/2sd23cs054/attempts - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:42.553Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:52.632Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:52.642Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:55.027Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:09:55.036Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:10:02.946Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:10:02.956Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:10:17.947Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/693c6eaddd39cd27768ca8d0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:10:33.117Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/693c6eaddd39cd27768ca8d0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:10:33.124Z"}
+{"level":"info","message":"GET /api/opd/GENERAL_SURGERY_OPD/693c6eaddd39cd27768ca8d0 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:10:36.705Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T07:11:11.587Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T07:11:11.599Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T07:13:33.665Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T07:13:33.669Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:13:46.828Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:13:47.169Z"}
+{"level":"info","message":"GET /api/admin/stats - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:13:47.270Z"}
+{"level":"info","message":"GET /api/admin/export/batch/123 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:13:52.694Z"}
+{"level":"info","message":"GET /api/admin/export/batch/123 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T07:14:31.223Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T07:15:27.191Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T07:15:27.203Z"}
