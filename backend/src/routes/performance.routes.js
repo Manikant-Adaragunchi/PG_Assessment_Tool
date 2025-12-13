@@ -6,6 +6,6 @@ const { authorize } = require('../middleware/role.middleware');
 
 // Route to get full performance history of a student
 // Only accessible by admin (HOD)
-router.get('/:studentId', protect, authorize('HOD'), performanceController.getInternPerformance);
+router.get('/:studentId', protect, authorize('HOD', 'FACULTY'), performanceController.getInternPerformance);
 
 module.exports = router;

@@ -1095,3 +1095,60 @@
 {"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:35:15.321Z"}
 {"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:35:15.510Z"}
 {"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:35:15.534Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T12:36:50.327Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T12:36:50.335Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:37:10.297Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:37:10.591Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:37:10.640Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:37:14.146Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:37:14.163Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:41:40.496Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:41:40.506Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:41:40.602Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:41:40.623Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:41:41.436Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:41:41.445Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:41:41.676Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:41:41.687Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T12:41:57.648Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T12:41:57.652Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:42:09.796Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:42:10.007Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:42:10.038Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:42:13.904Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:42:13.918Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T12:44:23.681Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T12:44:23.685Z"}
+{"level":"info","message":"POST /api/auth/login - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:31.568Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:31.800Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:31.840Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d9 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:33.880Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d9 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:33.897Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d9 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:37.841Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d9 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:37.853Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:40.355Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:40.368Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:44.485Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:44.493Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:53.453Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:45:53.461Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T12:48:15.292Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T12:48:15.297Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:48:36.652Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:48:36.719Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:49:08.987Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:49:09.007Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:49:14.008Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:49:14.037Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:13.427Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:13.433Z"}
+{"level":"warn","message":"Firebase ServiceAccountKey.json not found and ENV Not set. Auth verification will fail.","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:22.004Z"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:22.009Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:46.553Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:46.625Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:47.702Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:47.736Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:50.503Z"}
+{"level":"info","message":"GET /api/admin/interns - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:50.519Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:53.892Z"}
+{"level":"info","message":"GET /api/performance/693c6eaedd39cd27768ca8d3 - ::1","service":"pg-assessment-tool","timestamp":"2025-12-13T12:51:53.919Z"}

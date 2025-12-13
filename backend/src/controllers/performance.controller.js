@@ -15,107 +15,125 @@ exports.getInternPerformance = async (req, res) => {
         }
 
         // 1. OPD Evaluations (Aggregate attempts)
-        const opdDocs = await OpdEvaluation.find({ internId: studentId })
-            .populate('attempts.facultyId', 'firstName lastName')
-            .populate('attempts.acknowledgedBy.userId', 'firstName lastName')
-            .lean();
+        let opdAttempts = [];
+        try {
+            const opdDocs = await OpdEvaluation.find({ internId: studentId })
+                .populate('attempts.facultyId', 'firstName lastName')
+                .populate('attempts.acknowledgedBy.userId', 'firstName lastName')
+                .lean();
 
-        const opdAttempts = [];
-        opdDocs.forEach(doc => {
-            if (doc.attempts && doc.attempts.length > 0) {
-                doc.attempts.forEach(attempt => {
-                    // Filter out TEMPORARY if needed, but for admin let's show submitted ones
-                    if (attempt.status !== 'TEMPORARY') {
-                        opdAttempts.push({
-                            _id: attempt._id,
-                            moduleCode: doc.moduleCode,
-                            attemptDate: attempt.attemptDate,
-                            status: attempt.status,
-                            result: attempt.result,
-                            faculty: attempt.facultyId ? `${attempt.facultyId.firstName} ${attempt.facultyId.lastName}` : 'Unknown',
-                            // Add other fields as needed
-                            createdAt: attempt.createdAt
-                        });
-                    }
-                });
-            }
-        });
+            opdDocs.forEach(doc => {
+                if (doc.attempts && doc.attempts.length > 0) {
+                    doc.attempts.forEach(attempt => {
+                        // Filter out TEMPORARY if needed, but for admin let's show submitted ones
+                        if (attempt.status !== 'TEMPORARY') {
+                            opdAttempts.push({
+                                _id: attempt._id,
+                                moduleCode: doc.moduleCode,
+                                attemptDate: attempt.attemptDate,
+                                status: attempt.status,
+                                result: attempt.result,
+                                faculty: attempt.facultyId ? attempt.facultyId.fullName : 'Unknown',
+                                // Add other fields as needed
+                                createdAt: attempt.createdAt
+                            });
+                        }
+                    });
+                }
+            });
+        } catch (err) {
+            console.error('Error fetching OPD performance:', err);
+        }
 
         // 2. Wetlab Evaluations
-        const wetlabDocs = await WetlabEvaluation.find({ internId: studentId })
-            .populate('attempts.facultyId', 'firstName lastName')
-            .lean();
+        let wetlabEvaluations = [];
+        try {
+            const wetlabDocs = await WetlabEvaluation.find({ internId: studentId })
+                .populate('attempts.facultyId', 'firstName lastName')
+                .lean();
 
-        const wetlabEvaluations = [];
-        wetlabDocs.forEach(doc => {
-            if (doc.attempts && doc.attempts.length > 0) {
-                doc.attempts.forEach(attempt => {
-                    if (attempt.status !== 'TEMPORARY') {
-                        wetlabEvaluations.push({
-                            _id: attempt._id,
-                            moduleCode: 'WETLAB',
-                            exerciseName: attempt.exerciseName,
-                            totalScore: attempt.totalScore,
-                            grade: attempt.grade,
-                            status: attempt.status,
-                            faculty: attempt.facultyId ? `${attempt.facultyId.firstName} ${attempt.facultyId.lastName}` : 'Unknown',
-                            createdAt: attempt.date || attempt.createdAt
-                        });
-                    }
-                });
-            }
-        });
+            wetlabDocs.forEach(doc => {
+                if (doc.attempts && doc.attempts.length > 0) {
+                    doc.attempts.forEach(attempt => {
+                        if (attempt.status !== 'TEMPORARY') {
+                            wetlabEvaluations.push({
+                                _id: attempt._id,
+                                moduleCode: 'WETLAB',
+                                topicName: attempt.exerciseName,
+                                totalScore: attempt.totalScore,
+                                grade: attempt.grade,
+                                status: attempt.status,
+                                faculty: attempt.facultyId ? attempt.facultyId.fullName : 'Unknown',
+                                createdAt: attempt.date || attempt.createdAt
+                            });
+                        }
+                    });
+                }
+            });
+        } catch (err) {
+            console.error('Error fetching Wetlab performance:', err);
+        }
 
         // 3. Surgery Evaluations (Aggregate attempts)
-        const surgeryDocs = await SurgeryEvaluation.find({ internId: studentId })
-            .populate('attempts.facultyId', 'firstName lastName')
-            .lean();
+        let surgeryAttempts = [];
+        try {
+            const surgeryDocs = await SurgeryEvaluation.find({ internId: studentId })
+                .populate('attempts.facultyId', 'firstName lastName')
+                .lean();
 
-        const surgeryAttempts = [];
-        surgeryDocs.forEach(doc => {
-            if (doc.attempts && doc.attempts.length > 0) {
-                doc.attempts.forEach(attempt => {
-                    if (attempt.status !== 'TEMPORARY') {
-                        surgeryAttempts.push({
-                            _id: attempt._id,
-                            moduleCode: doc.moduleCode, // SURGERY
-                            attemptDate: attempt.attemptDate,
-                            surgeryName: attempt.surgeryName,
-                            patientName: attempt.patientName,
-                            totalScore: attempt.totalScore,
-                            grade: attempt.grade,
-                            status: attempt.status,
-                            faculty: attempt.facultyId ? `${attempt.facultyId.firstName} ${attempt.facultyId.lastName}` : 'Unknown',
-                            createdAt: attempt.createdAt
-                        });
-                    }
-                });
-            }
-        });
+            surgeryDocs.forEach(doc => {
+                if (doc.attempts && doc.attempts.length > 0) {
+                    doc.attempts.forEach(attempt => {
+                        if (attempt.status !== 'TEMPORARY') {
+                            surgeryAttempts.push({
+                                _id: attempt._id,
+                                moduleCode: doc.moduleCode, // SURGERY
+                                attemptDate: attempt.attemptDate,
+                                surgeryName: attempt.surgeryName,
+                                patientName: attempt.patientName,
+                                totalScore: attempt.totalScore,
+                                grade: attempt.grade,
+                                status: attempt.status,
+                                faculty: attempt.facultyId ? attempt.facultyId.fullName : 'Unknown',
+                                createdAt: attempt.createdAt
+                            });
+                        }
+                    });
+                }
+            });
+        } catch (err) {
+            console.error('Error fetching Surgery performance:', err);
+        }
 
         // 4. Academic Evaluations
-        const academicDocs = await AcademicEvaluation.find({ internId: studentId })
-            .populate('attempts.facultyId', 'firstName lastName')
-            .lean();
+        let academicEvaluations = [];
+        try {
+            const academicDocs = await AcademicEvaluation.find({ internId: studentId })
+                .populate('attempts.facultyId', 'firstName lastName')
+                .lean();
 
-        const academicEvaluations = [];
-        academicDocs.forEach(doc => {
-            if (doc.attempts && doc.attempts.length > 0) {
-                doc.attempts.forEach(attempt => {
-                    if (attempt.status !== 'TEMPORARY') {
-                        academicEvaluations.push({
-                            _id: attempt._id,
-                            moduleCode: 'ACADEMIC',
-                            evaluationType: attempt.evaluationType,
-                            topic: attempt.topic, // topic is used in new schema
-                            status: attempt.status,
-                            faculty: attempt.facultyId ? `${attempt.facultyId.firstName} ${attempt.facultyId.lastName}` : 'Unknown',
-                            createdAt: attempt.date || attempt.createdAt
-                        });
-                    }
-                });
-            }
-        });
+            academicDocs.forEach(doc => {
+                if (doc.attempts && doc.attempts.length > 0) {
+                    doc.attempts.forEach(attempt => {
+                        if (attempt.status !== 'TEMPORARY') {
+                            academicEvaluations.push({
+                                _id: attempt._id,
+                                moduleCode: 'ACADEMIC',
+                                evaluationType: attempt.evaluationType,
+                                topicName: attempt.topic, // topic is used in new schema
+                                status: attempt.status,
+                                totalScore: calculateAcademicScore(attempt.scores),
+                                grade: calculateAcademicGrade(calculateAcademicScore(attempt.scores)),
+                                faculty: attempt.facultyId ? attempt.facultyId.fullName : 'Unknown',
+                                createdAt: attempt.date || attempt.createdAt
+                            });
+                        }
+                    });
+                }
+            });
+        } catch (err) {
+            console.error('Error fetching Academic performance:', err);
+        }
 
         res.status(200).json({
             student: {
@@ -139,3 +157,20 @@ exports.getInternPerformance = async (req, res) => {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
+
+function calculateAcademicScore(scores) {
+    if (!scores) return 0;
+    return (scores.presentationQuality || 0) +
+        (scores.content || 0) +
+        (scores.qaHandling || 0) +
+        (scores.slidesQuality || 0) +
+        (scores.timing || 0);
+}
+
+function calculateAcademicGrade(totalScore) {
+    if (totalScore >= 20) return 'Excellent';
+    if (totalScore >= 15) return 'Good';
+    if (totalScore >= 10) return 'Average';
+    if (totalScore >= 5) return 'Below Average';
+    return 'Poor';
+}

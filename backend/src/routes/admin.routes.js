@@ -28,6 +28,6 @@ router.delete('/batches/:id', authorize('HOD'), require('../controllers/admin.co
 
 // Exports - HOD Only
 router.get('/export/batch/:batchId', authorize('HOD'), exportBatchExcel); // Excel
-router.get('/export/intern/:internId', authorize('HOD'), exportInternReport); // PDF
+router.get('/export/intern/:internId', authorize('HOD', 'FACULTY'), exportInternReport); // PDF
 
 module.exports = router;
