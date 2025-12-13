@@ -120,3 +120,12 @@ export const downloadInternReport = async (internId) => {
         throw error.response?.data || error.message;
     }
 };
+
+export const getInternPerformance = async (studentId) => {
+    try {
+        const response = await api.get(`/performance/${studentId}`);
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};

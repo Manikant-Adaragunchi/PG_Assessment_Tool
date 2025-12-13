@@ -23,6 +23,11 @@ const UserSchema = new mongoose.Schema({
         enum: ['HOD', 'FACULTY', 'INTERN'],
         required: true
     },
+    gender: {
+        type: String,
+        enum: ['M', 'F', 'O'],
+        default: 'M' // Defaulting to M for now to avoid breaking existing without migration
+    },
     regNo: {
         type: String // Optional, mainly for interns
     },

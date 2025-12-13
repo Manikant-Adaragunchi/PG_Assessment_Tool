@@ -5,66 +5,111 @@ const User = require('../models/User');
 const logger = require('../config/logger');
 
 // POST /opd/:moduleCode/:internId/attempts
+// POST /opd/:moduleCode/:internId/attempts
 exports.addAttempt = async (req, res) => {
-    const session = await mongoose.startSession();
-    session.startTransaction();
+    // const session = await mongoose.startSession();
+    // session.startTransaction();
     try {
+        console.log('OPD Add Attempt Request:', req.params, req.body); // Debug Log
         const { moduleCode, internId } = req.params;
-        const { attemptDate, answers } = req.body; // Answers: [{ itemKey, ynValue, remark }]
+        const { attemptDate, answers, grade } = req.body; // Added grade
 
-        // 1. Validation
+        // 1. Validation & Result Calculation
         let isPass = true;
         for (const ans of answers) {
             if (ans.ynValue === 'N') {
                 isPass = false;
             }
         }
-
-        let status = isPass ? 'PENDING_ACK' : 'TEMPORARY';
+        const result = isPass ? 'PASS' : 'FAIL';
+        console.log('Calculated Result:', result); // Debug Log
 
         // 2. Find/Create Evaluation Doc
-        let evalDoc = await OpdEvaluation.findOne({ internId, moduleCode }).session(session);
+        let evalDoc = await OpdEvaluation.findOne({ internId, moduleCode });
         if (!evalDoc) {
             evalDoc = new OpdEvaluation({ internId, moduleCode, attempts: [] });
         }
 
-        // 3. Add Attempt
+        // 3. Calculate Consecutive Streak (Retroactive + Current)
+        let consecutiveStr = 0;
+
+        // We only care about streak if current is PASS. If current Fail, streak is 0.
+        if (isPass) {
+            consecutiveStr = 1; // Current one
+            // Look backwards
+            for (let i = evalDoc.attempts.length - 1; i >= 0; i--) {
+                if (evalDoc.attempts[i].result === 'PASS') {
+                    consecutiveStr++;
+                } else {
+                    break; // Streak broken
+                }
+            }
+        } else {
+            consecutiveStr = 0;
+        }
+        console.log('Calculated Streak:', consecutiveStr); // Debug Log
+
+        // 4. Determine Status
+        const status = (consecutiveStr >= 3) ? 'PERMANENT' : 'TEMPORARY';
+        console.log('Determined Status:', status); // Debug Log
+
+        // 5. Add Attempt
         const attempt = {
             attemptNumber: evalDoc.attempts.length + 1,
             attemptDate: attemptDate || new Date(),
             facultyId: req.user._id,
             answers,
-            status,
-            result: isPass ? 'PASS' : 'FAIL'
+            status: status,
+            result: result,
+            grade: grade || 'Average'
         };
 
         evalDoc.attempts.push(attempt);
-        await evalDoc.save({ session });
+        await evalDoc.save();
+        console.log('OpdEvaluation Saved.'); // Debug Log
 
-        // 4. Competency Logic for Failures
-        if (status === 'TEMPORARY' || !isPass) {
+        if (status === 'PERMANENT') {
             await OpdCompetency.findOneAndUpdate(
                 { internId, moduleCode },
-                { consecutiveSuccessCount: 0, competent: false },
-                { upsert: true, session }
+                { consecutiveSuccessCount: consecutiveStr, competent: true, achievedAt: new Date() },
+                { upsert: true }
             );
+            console.log('OpdCompetency Updated (PERMANENT).'); // Debug Log
+        } else {
+            // Update count but not competent
+            await OpdCompetency.findOneAndUpdate(
+                { internId, moduleCode },
+                { consecutiveSuccessCount: consecutiveStr, competent: false },
+                { upsert: true }
+            );
+            console.log('OpdCompetency Updated (TEMPORARY).'); // Debug Log
         }
 
-        await session.commitTransaction();
-        res.status(201).json({ success: true, data: evalDoc.attempts[evalDoc.attempts.length - 1] });
+        // await session.commitTransaction();
+
+        // Return attempt with streak info
+        res.status(201).json({
+            success: true,
+            data: {
+                ...attempt,
+                currentStreak: consecutiveStr
+            }
+        });
+
     } catch (error) {
-        await session.abortTransaction();
+        // await session.abortTransaction();
+        console.error('OPD Add Attempt Trace Error:', error); // Detailed Error Log
         logger.error('OPD Add Attempt Error:', error);
         res.status(500).json({ success: false, error: error.message });
     } finally {
-        session.endSession();
+        // session.endSession();
     }
 };
 
 // POST /opd/:moduleCode/:internId/attempts/:attemptNumber/acknowledge (INTERN ONLY)
 exports.acknowledgeAttempt = async (req, res) => {
-    const session = await mongoose.startSession();
-    session.startTransaction();
+    // const session = await mongoose.startSession();
+    // session.startTransaction();
     try {
         const { moduleCode, internId, attemptNumber } = req.params;
 
@@ -72,7 +117,7 @@ exports.acknowledgeAttempt = async (req, res) => {
             return res.status(403).json({ success: false, error: 'Cannot acknowledge another intern\'s evaluation' });
         }
 
-        const evalDoc = await OpdEvaluation.findOne({ internId, moduleCode }).session(session);
+        const evalDoc = await OpdEvaluation.findOne({ internId, moduleCode });
         if (!evalDoc) return res.status(404).json({ success: false, error: 'Evaluation not found' });
 
         const attempt = evalDoc.attempts.find(a => a.attemptNumber === parseInt(attemptNumber));
@@ -85,10 +130,10 @@ exports.acknowledgeAttempt = async (req, res) => {
         attempt.status = 'ACKNOWLEDGED';
         attempt.acknowledgedBy = { userId: req.user._id, fullName: req.user.fullName };
         attempt.acknowledgedAt = new Date();
-        await evalDoc.save({ session });
+        await evalDoc.save();
 
         if (attempt.result === 'PASS') {
-            let compDoc = await OpdCompetency.findOne({ internId, moduleCode }).session(session);
+            let compDoc = await OpdCompetency.findOne({ internId, moduleCode });
             if (!compDoc) {
                 compDoc = new OpdCompetency({ internId, moduleCode, consecutiveSuccessCount: 0 });
             }
@@ -99,23 +144,23 @@ exports.acknowledgeAttempt = async (req, res) => {
                 compDoc.competent = true;
                 if (!compDoc.achievedAt) compDoc.achievedAt = new Date();
             }
-            await compDoc.save({ session });
+            await compDoc.save();
         } else {
             await OpdCompetency.findOneAndUpdate(
                 { internId, moduleCode },
                 { consecutiveSuccessCount: 0, competent: false },
-                { upsert: true, session }
+                { upsert: true }
             );
         }
 
-        await session.commitTransaction();
+        // await session.commitTransaction();
         res.status(200).json({ success: true, data: attempt });
 
     } catch (error) {
-        await session.abortTransaction();
+        // await session.abortTransaction();
         res.status(500).json({ success: false, error: error.message });
     } finally {
-        session.endSession();
+        // session.endSession();
     }
 };
 

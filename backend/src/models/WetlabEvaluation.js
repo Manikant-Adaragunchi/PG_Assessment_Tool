@@ -34,7 +34,7 @@ const WetlabEvaluationSchema = new mongoose.Schema({
 
     status: {
         type: String,
-        enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED'],
+        enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED', 'PERMANENT', 'COMPLETED'],
         default: 'TEMPORARY'
     },
 
@@ -45,4 +45,4 @@ const WetlabEvaluationSchema = new mongoose.Schema({
     acknowledgedAt: { type: Date }
 }, { timestamps: true });
 
-module.exports = mongoose.model('WetlabEvaluation', WetlabEvaluationSchema);
+module.exports = mongoose.models.WetlabEvaluation || mongoose.model('WetlabEvaluation', WetlabEvaluationSchema);

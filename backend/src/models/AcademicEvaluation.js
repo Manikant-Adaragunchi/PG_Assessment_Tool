@@ -7,42 +7,25 @@ const AcademicEvaluationSchema = new mongoose.Schema({
         required: true,
         index: true
     },
-    moduleCode: {
-        type: String,
-        required: true, // 'ACADEMIC_SEMINAR', 'ACADEMIC_JCR', 'ACADEMIC_CASE'
-        enum: ['ACADEMIC_SEMINAR', 'ACADEMIC_JCR', 'ACADEMIC_CASE']
-    },
-    topicName: {
-        type: String,
-        required: true
-    },
-    scores: [{
-        type: Number,
-        min: 0,
-        max: 5
-    }], // Array of 5 numbers
-
-    totalScore: Number,
-    grade: String,
-    remarksOverall: String,
-
-    facultyId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
-
-    status: {
-        type: String,
-        enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED'],
-        default: 'TEMPORARY'
-    },
-
-    acknowledgedBy: {
-        userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-        fullName: String
-    },
-    acknowledgedAt: { type: Date }
+    attempts: [{
+        attemptNumber: Number,
+        date: { type: Date, default: Date.now },
+        facultyId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+        topic: String,
+        scores: {
+            presentationQuality: Number,
+            content: Number,
+            qaHandling: Number,
+            slidesQuality: Number,
+            timing: Number
+        },
+        remarks: String,
+        status: {
+            type: String,
+            enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED'],
+            default: 'PENDING_ACK'
+        }
+    }]
 }, { timestamps: true });
 
-module.exports = mongoose.model('AcademicEvaluation', AcademicEvaluationSchema);
+module.exports = mongoose.models.AcademicEvaluation || mongoose.model('AcademicEvaluation', AcademicEvaluationSchema);

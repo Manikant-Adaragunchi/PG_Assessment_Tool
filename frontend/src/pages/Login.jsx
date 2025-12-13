@@ -49,7 +49,7 @@ const Login = () => {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center relative overflow-hidden font-sans bg-[url('/hospital-bg.jpg')] bg-cover bg-center bg-fixed">
+        <div className="min-h-screen flex items-center justify-center relative overflow-hidden font-sans bg-gradient-to-br from-blue-900 to-slate-900">
             {/* Professional Overlay: Gradient Blue-Black for readability */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-black/60 backdrop-blur-[2px] z-0"></div>
 

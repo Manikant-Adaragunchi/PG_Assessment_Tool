@@ -8,10 +8,10 @@ const CreateBatch = () => {
     const [startDate, setStartDate] = useState('');
     const [loading, setLoading] = useState(false);
     const [interns, setInterns] = useState([
-        { fullName: '', email: '', regNo: '' },
-        { fullName: '', email: '', regNo: '' },
-        { fullName: '', email: '', regNo: '' },
-        { fullName: '', email: '', regNo: '' }
+        { fullName: '', email: '', regNo: '', gender: 'M' },
+        { fullName: '', email: '', regNo: '', gender: 'M' },
+        { fullName: '', email: '', regNo: '', gender: 'M' },
+        { fullName: '', email: '', regNo: '', gender: 'M' }
     ]);
 
     const handleInternChange = (index, field, value) => {
@@ -19,6 +19,8 @@ const CreateBatch = () => {
         newInterns[index][field] = value;
         setInterns(newInterns);
     };
+
+    const today = new Date().toISOString().split('T')[0];
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -56,10 +58,12 @@ const CreateBatch = () => {
                         <input
                             type="date"
                             required
+                            min={today}
                             className="w-full border p-2 rounded-lg"
                             value={startDate}
                             onChange={(e) => setStartDate(e.target.value)}
                         />
+                        <p className="text-xs text-gray-500 mt-1">Cannot be a past date.</p>
                     </div>
                 </div>
 
@@ -72,38 +76,55 @@ const CreateBatch = () => {
                     {interns.map((intern, idx) => (
                         <div key={idx} className="p-4 bg-gray-50 rounded-lg border border-gray-100">
                             <h4 className="text-sm font-bold text-gray-500 uppercase mb-3">Intern #{idx + 1}</h4>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <input
-                                    type="text"
-                                    placeholder="Full Name"
-                                    required
-                                    className="border p-2 rounded text-sm"
-                                    value={intern.fullName}
-                                    onChange={(e) => handleInternChange(idx, 'fullName', e.target.value)}
-                                />
-                                <input
-                                    type="email"
-                                    placeholder="Email Address"
-                                    required
-                                    className="border p-2 rounded text-sm"
-                                    value={intern.email}
-                                    onChange={(e) => handleInternChange(idx, 'email', e.target.value)}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="Registration No."
-                                    required
-                                    className="border p-2 rounded text-sm"
-                                    value={intern.regNo}
-                                    onChange={(e) => handleInternChange(idx, 'regNo', e.target.value)}
-                                />
+                            <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+                                <div className="md:col-span-4">
+                                    <input
+                                        type="text"
+                                        placeholder="Full Name"
+                                        required
+                                        className="w-full border p-2 rounded text-sm"
+                                        value={intern.fullName}
+                                        onChange={(e) => handleInternChange(idx, 'fullName', e.target.value)}
+                                    />
+                                </div>
+                                <div className="md:col-span-4">
+                                    <input
+                                        type="email"
+                                        placeholder="Email Address"
+                                        required
+                                        className="w-full border p-2 rounded text-sm"
+                                        value={intern.email}
+                                        onChange={(e) => handleInternChange(idx, 'email', e.target.value)}
+                                    />
+                                </div>
+                                <div className="md:col-span-2">
+                                    <input
+                                        type="text"
+                                        placeholder="Reg No."
+                                        required
+                                        className="w-full border p-2 rounded text-sm"
+                                        value={intern.regNo}
+                                        onChange={(e) => handleInternChange(idx, 'regNo', e.target.value)}
+                                    />
+                                </div>
+                                <div className="md:col-span-2">
+                                    <select
+                                        className="w-full border p-2 rounded text-sm"
+                                        value={intern.gender}
+                                        onChange={(e) => handleInternChange(idx, 'gender', e.target.value)}
+                                    >
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
+                                        <option value="O">Other</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
 
                 <div className="flex justify-end pt-4 border-t border-gray-100">
-                    <button type="button" className="text-gray-600 px-4 py-2 hover:bg-gray-100 rounded-lg mr-2">Cancel</button>
+                    <button type="button" onClick={() => navigate(-1)} className="text-gray-600 px-4 py-2 hover:bg-gray-100 rounded-lg mr-2">Cancel</button>
                     <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 font-medium">
                         Create & Send Student Codes
                     </button>

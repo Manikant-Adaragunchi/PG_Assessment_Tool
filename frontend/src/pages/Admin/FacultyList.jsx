@@ -6,7 +6,7 @@ const FacultyList = () => {
     const [loading, setLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingId, setEditingId] = useState(null);
-    const [formData, setFormData] = useState({ fullName: '', email: '', role: 'FACULTY' });
+    const [formData, setFormData] = useState({ fullName: '', email: '', role: 'FACULTY', gender: 'M' });
 
     const fetchFaculty = async () => {
         try {
@@ -27,7 +27,7 @@ const FacultyList = () => {
 
     const handleOpenAdd = () => {
         setEditingId(null);
-        setFormData({ fullName: '', email: '', role: 'FACULTY' });
+        setFormData({ fullName: '', email: '', role: 'FACULTY', gender: 'M' });
         setIsModalOpen(true);
     };
 
@@ -36,7 +36,8 @@ const FacultyList = () => {
         setFormData({
             fullName: facultyMember.fullName,
             email: facultyMember.email,
-            role: facultyMember.role
+            role: facultyMember.role,
+            gender: facultyMember.gender || 'M'
         });
         setIsModalOpen(true);
     };
@@ -63,6 +64,12 @@ const FacultyList = () => {
 
     if (loading) return <div className="p-8 text-center text-gray-500 animate-pulse">Loading faculty list...</div>;
 
+    const getGenderIcon = (gender) => {
+        if (gender === 'F') return <span className="text-pink-500 text-lg mr-2" title="Female">👩‍⚕️</span>;
+        if (gender === 'O') return <span className="text-purple-500 text-lg mr-2" title="Other">🧑‍⚕️</span>;
+        return <span className="text-blue-500 text-lg mr-2" title="Male">👨‍⚕️</span>;
+    };
+
     return (
         <div>
             <div className="flex justify-between items-center mb-6">
@@ -88,7 +95,10 @@ const FacultyList = () => {
                     <tbody>
                         {faculty.map(f => (
                             <tr key={f._id} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                                <td className="p-4 font-medium text-gray-900">{f.fullName}</td>
+                                <td className="p-4 font-medium text-gray-900 flex items-center">
+                                    {getGenderIcon(f.gender)}
+                                    {f.fullName}
+                                </td>
                                 <td className="p-4 text-gray-600">{f.email}</td>
                                 <td className="p-4">
                                     <span className={`text-xs px-2 py-1 rounded-full font-bold ${f.role === 'HOD' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}`}>
@@ -155,6 +165,18 @@ const FacultyList = () => {
                                     value={formData.email}
                                     onChange={e => setFormData({ ...formData, email: e.target.value })}
                                 />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                                <select
+                                    className="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary-500 outline-none"
+                                    value={formData.gender}
+                                    onChange={e => setFormData({ ...formData, gender: e.target.value })}
+                                >
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                    <option value="O">Other</option>
+                                </select>
                             </div>
                             <div className="flex justify-end gap-3 mt-6">
                                 <button

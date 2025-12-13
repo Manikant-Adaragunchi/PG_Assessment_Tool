@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const WetLabEvaluation = require('../models/WetLabEvaluation');
+const WetLabEvaluation = require('../models/WetlabEvaluation');
 
 // POST /wetlab/:internId/attempts
 exports.addAttempt = async (req, res) => {
@@ -13,6 +13,22 @@ exports.addAttempt = async (req, res) => {
             evalDoc = new WetLabEvaluation({ internId, attempts: [] });
         }
 
+        // Auto-Grading & Streak Logic
+        // Max Score: 5 * 4 items = 20
+        const totalScore = (procedureSteps || 0) + (tissueHandling || 0) + (timeManagement || 0) + (outcome || 0);
+        const maxScore = 20;
+        const percentage = (totalScore / maxScore) * 100;
+
+        let grade = 'Poor';
+        if (percentage >= 80) grade = 'Excellent';
+        else if (percentage >= 50) grade = 'Average';
+
+        // Pass Definition: Grade is Excellent or Average
+        const isPass = (grade === 'Excellent' || grade === 'Average');
+
+        // Basic Status
+        const status = 'PENDING_ACK';
+
         const newAttempt = {
             date: new Date(),
             facultyId,
@@ -23,13 +39,22 @@ exports.addAttempt = async (req, res) => {
                 timeManagement,
                 outcome
             },
+            totalScore,
+            grade,
+            status,
             remarks
         };
 
         evalDoc.attempts.push(newAttempt);
         await evalDoc.save();
 
-        res.status(201).json({ success: true, data: newAttempt });
+        res.status(201).json({
+            success: true,
+            data: {
+                ...newAttempt,
+                currentStreak: consecutiveStr
+            }
+        });
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
     }

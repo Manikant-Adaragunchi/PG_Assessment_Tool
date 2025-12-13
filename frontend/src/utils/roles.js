@@ -7,7 +7,7 @@ export const ROLES = {
 export const getDashboardPath = (role) => {
     switch (role) {
         case ROLES.HOD: return '/admin/dashboard';
-        case ROLES.FACULTY: return '/faculty/dashboard';
+        case ROLES.FACULTY: return '/faculty/interns';
         case ROLES.INTERN: return '/pg/dashboard';
         default: return '/login';
     }
@@ -24,7 +24,6 @@ export const getRoleLinks = (role) => {
             ];
         case ROLES.FACULTY:
             return [
-                { label: 'Dashboard', path: '/faculty/dashboard' },
                 { label: 'PG List', path: '/faculty/interns' },
                 // Ideally this would be "My Interns" -> then click "Evaluate"
                 // For demo/simplicity we show direct modules

@@ -24,7 +24,7 @@ const AttemptSchema = new mongoose.Schema({
 
     status: {
         type: String,
-        enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED'],
+        enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED', 'PERMANENT', 'COMPLETED'],
         required: true,
         default: 'TEMPORARY'
     },
@@ -51,4 +51,4 @@ const SurgeryEvaluationSchema = new mongoose.Schema({
     attempts: [AttemptSchema]
 }, { timestamps: true });
 
-module.exports = mongoose.model('SurgeryEvaluation', SurgeryEvaluationSchema);
+module.exports = mongoose.models.SurgeryEvaluation || mongoose.model('SurgeryEvaluation', SurgeryEvaluationSchema);

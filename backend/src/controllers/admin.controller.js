@@ -13,7 +13,7 @@ const generateCode = () => {
 
 exports.createFaculty = async (req, res) => {
     try {
-        const { fullName, email } = req.body;
+        const { fullName, email, gender } = req.body;
 
         // Generate unique onboarding code
         const onboardingCode = generateCode();
@@ -22,6 +22,7 @@ exports.createFaculty = async (req, res) => {
         const user = await User.create({
             fullName,
             email,
+            gender: gender || 'M',
             password: onboardingCode, // Will be hashed by pre-save hook
             role: 'FACULTY'
         });
@@ -51,8 +52,23 @@ exports.createBatch = async (req, res) => {
     try {
         const { name, startDate, interns } = req.body;
 
+        // Validation: Exact 4 interns
         if (!interns || interns.length !== 4) {
             return res.status(400).json({ success: false, error: 'Batch must have exactly 4 interns' });
+        }
+
+        // Validation: Start Date Timestamp Check
+        const start = new Date(startDate);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Reset time part for accurate date comparison
+
+        if (isNaN(start.getTime())) {
+            return res.status(400).json({ success: false, error: 'Invalid Start Date format' });
+        }
+
+        // Ensure start date is not in the past (allow today)
+        if (start < today) {
+            return res.status(400).json({ success: false, error: 'Start Date cannot be in the past' });
         }
 
         // 1. Create Batch first (without interns)
@@ -68,7 +84,7 @@ exports.createBatch = async (req, res) => {
         try {
             // 2. Create Users linked to Batch
             for (const internData of interns) {
-                const { fullName, email, regNo } = internData;
+                const { fullName, email, regNo, gender } = internData;
 
                 const existingUser = await User.findOne({ email });
                 if (existingUser) {
@@ -82,6 +98,7 @@ exports.createBatch = async (req, res) => {
                     email,
                     role: 'INTERN',
                     regNo,
+                    gender: gender || 'M',
                     batchId: batch._id,
                     password: onboardingCode
                 });
@@ -179,7 +196,8 @@ exports.getDashboardStats = async (req, res) => {
     try {
         const activeBatches = await Batch.countDocuments();
         const registeredFaculty = await User.countDocuments({ role: 'FACULTY' });
-        const totalInterns = await User.countDocuments({ role: 'INTERN' });
+        // Only count interns assigned to a batch
+        const totalInterns = await User.countDocuments({ role: 'INTERN', batchId: { $exists: true, $ne: null } });
 
         res.status(200).json({
             success: true,
@@ -207,6 +225,7 @@ exports.updateFaculty = async (req, res) => {
         user.fullName = fullName || user.fullName;
         user.email = email || user.email;
         if (role) user.role = role;
+        if (req.body.gender) user.gender = req.body.gender;
 
         await user.save();
 
@@ -258,6 +277,7 @@ exports.getInterns = async (req, res) => {
             .select('-password')
             .populate('batchId', 'name startDate')
             .sort({ createdAt: -1 });
+        // Gender is included by default now as we select everything except password
         res.status(200).json({ success: true, data: interns });
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });

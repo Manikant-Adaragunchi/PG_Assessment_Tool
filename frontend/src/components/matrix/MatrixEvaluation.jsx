@@ -114,34 +114,52 @@ const MatrixEvaluation = ({
                                                             onChange={(e) => onUpdateCell(idx, q.key, 'scoreValue', e.target.value)}
                                                         />
                                                     ) : (
-                                                        <select
-                                                            disabled={readOnly}
-                                                            className={`h-10 px-2 rounded-lg border focus:ring-2 focus:ring-primary-200 outline-none transition-all text-xs font-bold ${getYNColor(val)} ${readOnly ? 'opacity-70 cursor-not-allowed' : ''}`}
-                                                            value={val || ''}
-                                                            onChange={(e) => onUpdateCell(idx, q.key, 'ynValue', e.target.value)}
-                                                        >
-                                                            <option value="">-</option>
-                                                            <option value="Y">YES</option>
-                                                            <option value="N">NO</option>
-                                                        </select>
+
+                                                        <div className="flex gap-2 justify-center">
+                                                            <label className={`cursor-pointer px-3 py-1.5 rounded-md border text-xs font-bold transition-all ${val === 'Y' ? 'bg-green-100 text-green-700 border-green-300' : 'bg-white border-surface-200 hover:bg-surface-50'} ${readOnly ? 'opacity-70 pointer-events-none' : ''}`}>
+                                                                <input
+                                                                    type="radio"
+                                                                    name={`${idx}-${q.key}`}
+                                                                    value="Y"
+                                                                    checked={val === 'Y'}
+                                                                    onChange={() => !readOnly && onUpdateCell(idx, q.key, 'ynValue', 'Y')}
+                                                                    className="hidden"
+                                                                />
+                                                                YES
+                                                            </label>
+                                                            <label className={`cursor-pointer px-3 py-1.5 rounded-md border text-xs font-bold transition-all ${val === 'N' ? 'bg-red-100 text-red-700 border-red-300' : 'bg-white border-surface-200 hover:bg-surface-50'} ${readOnly ? 'opacity-70 pointer-events-none' : ''}`}>
+                                                                <input
+                                                                    type="radio"
+                                                                    name={`${idx}-${q.key}`}
+                                                                    value="N"
+                                                                    checked={val === 'N'}
+                                                                    onChange={() => !readOnly && onUpdateCell(idx, q.key, 'ynValue', 'N')}
+                                                                    className="hidden"
+                                                                />
+                                                                NO
+                                                            </label>
+                                                        </div>
                                                     )}
+
                                                 </div>
 
                                                 {/* Remark Area - Conditional or Always visible on hover? */}
                                                 {/* Show if value exists */}
-                                                {(val !== undefined && val !== '') && (
-                                                    <input
-                                                        type="text"
-                                                        disabled={readOnly}
-                                                        placeholder={needsRemark ? "Remark Required*" : "Remark..."}
-                                                        className={`w-full text-xs p-1.5 rounded border outline-none focus:border-primary-400 transition-colors ${needsRemark && !remark
-                                                            ? 'border-red-300 bg-red-50 placeholder-red-400'
-                                                            : 'border-transparent bg-transparent hover:bg-white hover:border-surface-200'
-                                                            } ${readOnly ? 'opacity-70 cursor-not-allowed' : ''}`}
-                                                        value={remark}
-                                                        onChange={(e) => onUpdateCell(idx, q.key, 'remark', e.target.value)}
-                                                    />
-                                                )}
+                                                {
+                                                    (val !== undefined && val !== '') && (
+                                                        <input
+                                                            type="text"
+                                                            disabled={readOnly}
+                                                            placeholder={needsRemark ? "Remark Required*" : "Remark..."}
+                                                            className={`w-full text-xs p-1.5 rounded border outline-none focus:border-primary-400 transition-colors ${needsRemark && !remark
+                                                                ? 'border-red-300 bg-red-50 placeholder-red-400'
+                                                                : 'border-transparent bg-transparent hover:bg-white hover:border-surface-200'
+                                                                } ${readOnly ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                                            value={remark}
+                                                            onChange={(e) => onUpdateCell(idx, q.key, 'remark', e.target.value)}
+                                                        />
+                                                    )
+                                                }
                                             </div>
                                         </td>
                                     );
@@ -170,8 +188,8 @@ const MatrixEvaluation = ({
                         </tr>
                     </tfoot>
                 </table>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 

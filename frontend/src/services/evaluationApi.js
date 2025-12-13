@@ -19,6 +19,15 @@ export const addSurgeryAttempt = async (internId, attemptData) => {
     }
 };
 
+export const updateSurgeryAttempt = async (internId, attemptNumber, attemptData) => {
+    try {
+        const response = await api.put(`/surgery/${internId}/attempts/${attemptNumber}`, attemptData);
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
 // OPD
 export const getOpdAttempts = async (moduleCode, internId) => {
     try {
@@ -85,6 +94,15 @@ export const getWetlabAttempts = async (internId) => {
 export const addWetlabAttempt = async (internId, attemptData) => {
     try {
         const response = await api.post(`/wetlab/${internId}/attempts`, attemptData);
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
+export const validateIntern = async (identifier) => {
+    try {
+        const response = await api.get(`/interns/validate/${identifier}`);
         return response.data;
     } catch (error) {
         throw error.response?.data || error.message;

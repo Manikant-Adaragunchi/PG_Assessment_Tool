@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Eye, Users } from 'lucide-react';
 import { getInternList } from '../../services/adminApi';
 
 const InternList = () => {
     const [interns, setInterns] = useState([]);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     const fetchInterns = async () => {
         try {
@@ -24,52 +27,89 @@ const InternList = () => {
 
     if (loading) return <div className="p-8 text-center text-gray-500 animate-pulse">Loading PG list...</div>;
 
+    // Group interns by batch
+    const groupedInterns = interns.reduce((acc, intern) => {
+        const batchName = intern.batchId ? intern.batchId.name : 'Unassigned';
+
+        // Filter out Unassigned interns as per requirement
+        if (batchName === 'Unassigned') return acc;
+
+        if (!acc[batchName]) {
+            acc[batchName] = [];
+        }
+        acc[batchName].push(intern);
+        return acc;
+    }, {});
+
+    const sortedBatchNames = Object.keys(groupedInterns).sort((a, b) => {
+        return b.localeCompare(a); // Sort batches desc (newest first usually)
+    });
+
+    const getGenderIcon = (gender) => {
+        if (gender === 'F') return <span className="text-pink-500 text-lg mr-2" title="Female">👩‍⚕️</span>;
+        if (gender === 'O') return <span className="text-purple-500 text-lg mr-2" title="Other">🧑‍⚕️</span>;
+        // Default to Male or generic if not specified, assuming M for compatibility or generic
+        return <span className="text-blue-500 text-lg mr-2" title="Male">👨‍⚕️</span>;
+    };
+
     return (
         <div>
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-2xl font-bold text-gray-800">PG List (Interns)</h1>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                <table className="w-full text-left border-collapse">
-                    <thead>
-                        <tr className="bg-gray-50 border-b border-gray-200 text-xs text-gray-500 uppercase">
-                            <th className="p-4 font-semibold">Full Name</th>
-                            <th className="p-4 font-semibold">Registration No</th>
-                            <th className="p-4 font-semibold">Email</th>
-                            <th className="p-4 font-semibold">Batch</th>
-                            <th className="p-4 font-semibold">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {interns.map(intern => (
-                            <tr key={intern._id} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                                <td className="p-4 font-medium text-gray-900">{intern.fullName}</td>
-                                <td className="p-4 font-mono text-sm text-gray-600">{intern.regNo || 'N/A'}</td>
-                                <td className="p-4 text-gray-600">{intern.email}</td>
-                                <td className="p-4">
-                                    {intern.batchId ? (
-                                        <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs font-semibold">
-                                            {intern.batchId.name}
-                                        </span>
-                                    ) : (
-                                        <span className="text-gray-400 text-sm">Unassigned</span>
-                                    )}
-                                </td>
-                                <td className="p-4">
-                                    <span className={`text-xs px-2 py-1 rounded-full font-bold ${intern.isActive ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-                                        {intern.isActive ? 'Active' : 'Inactive'}
-                                    </span>
-                                </td>
-                            </tr>
-                        ))}
-                        {interns.length === 0 && (
-                            <tr>
-                                <td colSpan="5" className="p-8 text-center text-gray-400">No PGs found. Create a batch to add interns.</td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
+            <div className="space-y-8">
+                {sortedBatchNames.map(batchName => (
+                    <div key={batchName} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div className="bg-gray-50 px-6 py-4 border-b border-gray-200 flex items-center gap-2">
+                            <Users size={18} className="text-gray-500" />
+                            <h2 className="font-bold text-lg text-gray-700">{batchName}</h2>
+                            <span className="text-xs font-normal text-gray-500 bg-gray-200 px-2 py-0.5 rounded-full">{groupedInterns[batchName].length} PGs</span>
+                        </div>
+                        <table className="w-full text-left border-collapse">
+                            <thead>
+                                <tr className="border-b border-gray-100 text-xs text-gray-500 uppercase bg-gray-50/50">
+                                    <th className="p-4 font-semibold">Full Name</th>
+                                    <th className="p-4 font-semibold">Registration No</th>
+                                    <th className="p-4 font-semibold">Email</th>
+                                    <th className="p-4 font-semibold">Status</th>
+                                    <th className="p-4 font-semibold">Performance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {groupedInterns[batchName].map(intern => (
+                                    <tr key={intern._id} className="border-b last:border-0 border-gray-100 hover:bg-gray-50 transition-colors">
+                                        <td className="p-4 font-medium text-gray-900 flex items-center">
+                                            {getGenderIcon(intern.gender)}
+                                            {intern.fullName}
+                                        </td>
+                                        <td className="p-4 font-mono text-sm text-gray-600">{intern.regNo || 'N/A'}</td>
+                                        <td className="p-4 text-gray-600">{intern.email}</td>
+                                        <td className="p-4">
+                                            <span className={`text-xs px-2 py-1 rounded-full font-bold ${intern.isActive ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                                                {intern.isActive ? 'Active' : 'Inactive'}
+                                            </span>
+                                        </td>
+                                        <td className="p-4">
+                                            <button
+                                                onClick={() => navigate(`/admin/intern-performance/${intern._id}`)}
+                                                className="text-blue-600 hover:text-blue-800 p-2 hover:bg-blue-50 rounded-full transition-colors title='View Performance'"
+                                            >
+                                                <Eye size={18} />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                ))}
+
+                {sortedBatchNames.length === 0 && (
+                    <div className="p-12 text-center text-gray-400 bg-white rounded-xl border border-gray-200">
+                        {interns.length > 0 ? "All PGs are currently unassigned to a batch." : "No PGs found. Create a batch to add interns."}
+                    </div>
+                )}
             </div>
         </div>
     );

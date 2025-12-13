@@ -5,14 +5,7 @@ import Sidebar from '../components/layout/Sidebar';
 const DashboardLayout = () => {
     return (
         <div className="flex h-screen bg-surface-50 font-sans relative">
-            {/* Watermark Background */}
-            <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.35]">
-                <img
-                    src="/hospital-bg.jpg"
-                    alt="Watermark"
-                    className="w-3/4 max-w-4xl object-contain"
-                />
-            </div>
+            {/* Watermark Background - Removed missing image */}
 
             {/* Sidebar Component */}
             <Sidebar />

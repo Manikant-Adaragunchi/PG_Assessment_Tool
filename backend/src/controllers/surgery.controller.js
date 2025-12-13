@@ -64,15 +64,22 @@ exports.addAttempt = async (req, res) => {
 
         // Calculate Grade based on Percentage
         // Max Score = 19 * 5 = 95
-        // Percentage = (totalScore / 95) * 100
-        // Grading: >80% Excellent, >60% Good, >40% Average, else Poor? 
-        // User said: "excellent, avergae, poor...etc"
-        // Let's implement: >= 80 Excellent, >= 60 Average, < 60 Poor
         const maxScore = 95;
         const percentage = (totalScore / maxScore) * 100;
         let grade = 'Poor';
         if (percentage >= 80) grade = 'Excellent';
         else if (percentage >= 50) grade = 'Average'; // Adjusted threshold
+
+        let isPass = (grade === 'Excellent' || grade === 'Average');
+        if (hasLowScore) isPass = false; // Fail if any item < 3? (Low score sets status=TEMPORARY usually, treating as Fail for streak?)
+        // Let's assume Low Score (<3) implies NOT Competent for that specific skill, so streak breaks.
+
+        // Determine Final Status
+        if (hasLowScore) {
+            status = 'TEMPORARY';
+        } else {
+            status = 'PENDING_ACK';
+        }
 
         // 5. Add Attempt
         const newAttemptNumber = evalDoc.attempts.length + 1;
@@ -96,7 +103,13 @@ exports.addAttempt = async (req, res) => {
         evalDoc.attempts.push(attempt);
         await evalDoc.save();
 
-        res.status(201).json({ success: true, data: evalDoc.attempts[evalDoc.attempts.length - 1] });
+        res.status(201).json({
+            success: true,
+            data: {
+                ...attempt,
+                currentStreak: consecutiveStr
+            }
+        });
 
     } catch (error) {
         logger.error('Surgery Add Attempt Error:', error);

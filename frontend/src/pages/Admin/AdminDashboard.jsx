@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getDashboardStats } from '../../services/adminApi';
-// import { downloadBatchReport } from '../../services/adminApi';
 
 const AdminDashboard = () => {
+    // Stats State
     const [stats, setStats] = useState({
         activeBatches: 0,
         registeredFaculty: 0,
         totalInterns: 0
     });
+
+    // Export Modal State
+    const [isExportModalOpen, setIsExportModalOpen] = useState(false);
+    const [batches, setBatches] = useState([]);
+    const [selectedBatchId, setSelectedBatchId] = useState('');
+    const [exportLoading, setExportLoading] = useState(false);
 
     useEffect(() => {
         fetchStats();
@@ -25,21 +31,44 @@ const AdminDashboard = () => {
         }
     };
 
-    const handleBatchExport = async () => {
-        // Mock Batch ID for now or we need a dropdown. 
-        // For demo, we just export 'default' batch.
-        // await downloadBatchReport('123');
-        alert("Batch Export requires selecting a batch first. Go to 'Active Batches' page (Future).");
+    const handleOpenExport = async () => {
+        try {
+            // Fetch batches for the dropdown
+            const { getBatches } = await import('../../services/adminApi');
+            const data = await getBatches();
+            if (data.success) {
+                setBatches(data.data);
+                if (data.data.length > 0) {
+                    setSelectedBatchId(data.data[0]._id);
+                }
+                setIsExportModalOpen(true);
+            }
+        } catch (error) {
+            alert("Failed to load batches: " + error);
+        }
+    };
+
+    const handleExportSubmit = async () => {
+        if (!selectedBatchId) return;
+        setExportLoading(true);
+        try {
+            const { downloadBatchReport } = await import('../../services/adminApi');
+            await downloadBatchReport(selectedBatchId);
+            setIsExportModalOpen(false);
+        } catch (error) {
+            alert("Export failed: " + error);
+        } finally {
+            setExportLoading(false);
+        }
     };
 
     return (
-        <div className="space-y-8 animate-fade-in">
+        <div className="space-y-8 animate-fade-in relative">
             <div className="flex justify-between items-end">
                 <div>
                     <h1 className="text-3xl font-extrabold text-surface-900 tracking-tight">Admin Dashboard</h1>
                     <p className="text-surface-500 mt-1">Manage residency program, batches, and faculty access.</p>
                 </div>
-                {/* <button onClick={handleBatchExport} className="btn-secondary text-sm">Download Master Report</button> */}
             </div>
 
             {/* Stats Cards */}
@@ -49,7 +78,6 @@ const AdminDashboard = () => {
                         <div className="p-2 bg-primary-50 rounded-lg text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition-colors">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
                         </div>
-                        {/* <span className="text-xs font-bold px-2 py-1 bg-green-100 text-green-700 rounded-full">+1 New</span> */}
                     </div>
                     <h3 className="text-surface-500 text-sm font-semibold uppercase tracking-wide">Active Batches</h3>
                     <p className="text-3xl font-bold text-surface-900 mt-1">{stats.activeBatches}</p>
@@ -71,7 +99,7 @@ const AdminDashboard = () => {
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                         </div>
                     </div>
-                    <h3 className="text-surface-500 text-sm font-semibold uppercase tracking-wide">Total Interns</h3>
+                    <h3 className="text-surface-500 text-sm font-semibold uppercase tracking-wide">Total PG</h3>
                     <p className="text-3xl font-bold text-surface-900 mt-1">{stats.totalInterns}</p>
                 </div>
             </div>
@@ -96,7 +124,7 @@ const AdminDashboard = () => {
                 </Link>
 
                 <div
-                    onClick={() => downloadBatchReport('123')}
+                    onClick={handleOpenExport}
                     className="card hover:border-green-300 hover:shadow-md group flex flex-col justify-center items-center p-6 transition-all text-center cursor-pointer"
                 >
                     <div className="w-16 h-16 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-green-600 group-hover:text-white transition-colors shadow-sm">
@@ -106,15 +134,49 @@ const AdminDashboard = () => {
                     <p className="text-sm text-surface-500 mt-1">Download Excel summary of active batch</p>
                 </div>
             </div>
+
+            {/* Export Modal */}
+            {isExportModalOpen && (
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm">
+                    <div className="bg-white rounded-xl shadow-xl p-6 w-full max-w-sm animate-scale-in">
+                        <h3 className="text-lg font-bold mb-4">Export Batch Report</h3>
+                        <p className="text-sm text-gray-600 mb-4">Select a batch to download the excel report.</p>
+
+                        <div className="mb-6">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Select Batch</label>
+                            <select
+                                className="w-full border rounded-lg p-2.5 bg-gray-50 focus:ring-2 focus:ring-green-500 outline-none"
+                                value={selectedBatchId}
+                                onChange={(e) => setSelectedBatchId(e.target.value)}
+                            >
+                                {batches.map(batch => (
+                                    <option key={batch._id} value={batch._id}>
+                                        {batch.name} ({new Date(batch.startDate).getFullYear()})
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+
+                        <div className="flex justify-end gap-3">
+                            <button
+                                onClick={() => setIsExportModalOpen(false)}
+                                className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={handleExportSubmit}
+                                disabled={exportLoading}
+                                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
+                            >
+                                {exportLoading ? 'Downloading...' : 'Download Report'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
-};
-
-// Fake implementation for import since checking logic is annoying in overwrite
-const downloadBatchReport = (id) => {
-    import('../../services/adminApi').then(module => {
-        module.downloadBatchReport(id).then(() => alert("Downloading Report...")).catch(e => alert("Error: " + e));
-    });
 };
 
 export default AdminDashboard;

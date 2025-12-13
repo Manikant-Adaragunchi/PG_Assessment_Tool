@@ -8,6 +8,9 @@ const internController = require('../controllers/intern.controller'); // For ack
 
 router.use(protect);
 
+// Utility: Validate Intern (for Faculty to check ID)
+router.get('/interns/validate/:identifier', authorize('FACULTY', 'HOD'), internController.validateIntern);
+
 // Surgery Routes
 router.post('/surgery/:internId/attempts', authorize('FACULTY', 'HOD'), surgeryController.addAttempt);
 router.put('/surgery/:internId/attempts/:attemptNumber', authorize('FACULTY', 'HOD'), surgeryController.editAttempt);

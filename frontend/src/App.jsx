@@ -10,6 +10,7 @@ import CreateBatch from './pages/Admin/CreateBatch';
 import BatchList from './pages/Admin/BatchList';
 import FacultyList from './pages/Admin/FacultyList';
 import InternList from './pages/Admin/InternList';
+import InternPerformance from './pages/Admin/InternPerformance';
 import SurgeryModule from './pages/Surgery/SurgeryModule';
 import OpdModule from './pages/OPD/OpdModule';
 import AcademicModule from './pages/Academic/AcademicModule';
@@ -24,9 +25,12 @@ const PrivateRoute = ({ children }) => {
 };
 
 const DashboardHome = () => (
-    <div className="bg-white p-6 rounded-xl shadow-sm">
-        <h2 className="text-2xl font-bold mb-4">Welcome to Dashboard</h2>
-        <p className="text-gray-600">Select a module from the sidebar to begin.</p>
+    <div>
+        <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
+            <h2 className="text-2xl font-bold mb-2">Welcome to Dashboard</h2>
+            <p className="text-gray-600">Select a module from the sidebar to begin or view the PG list below.</p>
+        </div>
+        <InternList />
     </div>
 );
 
@@ -48,6 +52,7 @@ const AppRoutesFixed = () => {
                 <Route path="batches/create" element={<CreateBatch />} />
                 <Route path="faculty" element={<FacultyList />} />
                 <Route path="interns" element={<InternList />} />
+                <Route path="intern-performance/:studentId" element={<InternPerformance />} />
             </Route>
 
             {/* Faculty Dashboard */}

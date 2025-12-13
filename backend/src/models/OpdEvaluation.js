@@ -13,11 +13,12 @@ const OpdAttemptSchema = new mongoose.Schema({
 
     status: {
         type: String,
-        enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED'],
+        enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED', 'PERMANENT', 'COMPLETED'],
         default: 'TEMPORARY'
     },
 
-    result: { type: String, enum: ['PASS', 'FAIL'], default: 'FAIL' }, // Derived from Y/N
+    result: { type: String, enum: ['PASS', 'FAIL'], default: 'FAIL' },
+    grade: { type: String, enum: ['Excellent', 'Good', 'Average', 'Below Average', 'Poor'], default: 'Average' },
 
     acknowledgedBy: {
         userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -40,4 +41,4 @@ const OpdEvaluationSchema = new mongoose.Schema({
     attempts: [OpdAttemptSchema]
 }, { timestamps: true });
 
-module.exports = mongoose.model('OpdEvaluation', OpdEvaluationSchema);
+module.exports = mongoose.models.OpdEvaluation || mongoose.model('OpdEvaluation', OpdEvaluationSchema);
