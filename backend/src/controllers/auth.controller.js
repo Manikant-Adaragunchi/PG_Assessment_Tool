@@ -22,6 +22,10 @@ exports.login = async (req, res) => {
         // Check for user
         const user = await User.findOne({ email }).select('+password');
 
+        if (user && !user.isActive) {
+            return res.status(403).json({ success: false, error: 'Account is inactive. Please contact admin.' });
+        }
+
         if (user && (await user.matchPassword(password))) {
             res.json({
                 success: true,

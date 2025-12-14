@@ -3,13 +3,14 @@ const WetlabEvaluation = require('../models/WetlabEvaluation');
 const SurgeryEvaluation = require('../models/SurgeryEvaluation');
 const AcademicEvaluation = require('../models/AcademicEvaluation');
 const User = require('../models/User');
+const Batch = require('../models/Batch'); // Required for populate to work
 
 exports.getInternPerformance = async (req, res) => {
     try {
         const { studentId } = req.params;
 
         // Verify student exists
-        const student = await User.findById(studentId);
+        const student = await User.findById(studentId).populate('batchId');
         if (!student) {
             return res.status(404).json({ message: 'Student not found' });
         }
@@ -18,8 +19,8 @@ exports.getInternPerformance = async (req, res) => {
         let opdAttempts = [];
         try {
             const opdDocs = await OpdEvaluation.find({ internId: studentId })
-                .populate('attempts.facultyId', 'firstName lastName')
-                .populate('attempts.acknowledgedBy.userId', 'firstName lastName')
+                .populate('attempts.facultyId', 'fullName')
+                .populate('attempts.acknowledgedBy.userId', 'fullName')
                 .lean();
 
             opdDocs.forEach(doc => {
@@ -49,7 +50,7 @@ exports.getInternPerformance = async (req, res) => {
         let wetlabEvaluations = [];
         try {
             const wetlabDocs = await WetlabEvaluation.find({ internId: studentId })
-                .populate('attempts.facultyId', 'firstName lastName')
+                .populate('attempts.facultyId', 'fullName')
                 .lean();
 
             wetlabDocs.forEach(doc => {
@@ -78,7 +79,7 @@ exports.getInternPerformance = async (req, res) => {
         let surgeryAttempts = [];
         try {
             const surgeryDocs = await SurgeryEvaluation.find({ internId: studentId })
-                .populate('attempts.facultyId', 'firstName lastName')
+                .populate('attempts.facultyId', 'fullName')
                 .lean();
 
             surgeryDocs.forEach(doc => {
@@ -109,7 +110,7 @@ exports.getInternPerformance = async (req, res) => {
         let academicEvaluations = [];
         try {
             const academicDocs = await AcademicEvaluation.find({ internId: studentId })
-                .populate('attempts.facultyId', 'firstName lastName')
+                .populate('attempts.facultyId', 'fullName')
                 .lean();
 
             academicDocs.forEach(doc => {
@@ -138,11 +139,11 @@ exports.getInternPerformance = async (req, res) => {
         res.status(200).json({
             student: {
                 _id: student._id,
-                firstName: student.firstName,
-                lastName: student.lastName,
+                firstName: student.fullName, // Mapped to fullName as schema doesn't have firstName
+                lastName: '', // Schema doesn't have lastName
                 email: student.email,
-                registrationNumber: student.registrationNumber,
-                batch: student.batch
+                registrationNumber: student.regNo, // Corrected field mapping
+                batch: student.batchId // Populated batch object
             },
             performance: {
                 opd: opdAttempts,

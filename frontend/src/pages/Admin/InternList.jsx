@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Eye, Users } from 'lucide-react';
-import { getInternList } from '../../services/adminApi';
+import { Eye, Users, Trash, FileText } from 'lucide-react';
+import { getInternList, deleteIntern, downloadBatchReport } from '../../services/adminApi';
 
 const InternList = () => {
     const [interns, setInterns] = useState([]);
@@ -24,6 +24,34 @@ const InternList = () => {
     useEffect(() => {
         fetchInterns();
     }, []);
+
+    const handleDelete = async (intern) => {
+        const input = window.prompt(
+            `WARNING: This will PERMANENTLY DELETE ${intern.fullName} and ALL their evaluation data (OPD, Surgery, etc.)!\n\nThis action cannot be undone.\n\nType "DELETE" to confirm:`
+        );
+
+        if (input !== 'DELETE') {
+            if (input !== null) alert("Deletion cancelled. You must type 'DELETE' exactly.");
+            return;
+        }
+
+        try {
+            await deleteIntern(intern._id);
+            setInterns(interns.filter(i => i._id !== intern._id));
+            alert("Intern deleted successfully.");
+        } catch (err) {
+            alert("Failed to delete: " + (err.error || err));
+        }
+    };
+
+    const handleDownloadBatch = async (batchId, batchName) => {
+        try {
+            await downloadBatchReport(batchId);
+            // No alert needed, browser handles download
+        } catch (err) {
+            alert(`Failed to download report for ${batchName}: ` + (err.error || err.message));
+        }
+    };
 
     if (loading) return <div className="p-8 text-center text-gray-500 animate-pulse">Loading PG list...</div>;
 
@@ -65,6 +93,19 @@ const InternList = () => {
                             <Users size={18} className="text-gray-500" />
                             <h2 className="font-bold text-lg text-gray-700">{batchName}</h2>
                             <span className="text-xs font-normal text-gray-500 bg-gray-200 px-2 py-0.5 rounded-full">{groupedInterns[batchName].length} PGs</span>
+                            <div className="flex-1"></div>
+                            {batchName !== 'Unassigned' && (
+                                <button
+                                    onClick={() => {
+                                        const batchId = groupedInterns[batchName][0]?.batchId?._id;
+                                        if (batchId) handleDownloadBatch(batchId, batchName);
+                                    }}
+                                    className="flex items-center gap-1 text-sm bg-white border border-gray-300 text-gray-700 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors shadow-sm"
+                                >
+                                    <FileText size={16} className="text-green-600" />
+                                    Download Report
+                                </button>
+                            )}
                         </div>
                         <table className="w-full text-left border-collapse">
                             <thead>
@@ -73,7 +114,7 @@ const InternList = () => {
                                     <th className="p-4 font-semibold">Registration No</th>
                                     <th className="p-4 font-semibold">Email</th>
                                     <th className="p-4 font-semibold">Status</th>
-                                    <th className="p-4 font-semibold">Performance</th>
+                                    <th className="p-4 font-semibold">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -90,12 +131,20 @@ const InternList = () => {
                                                 {intern.isActive ? 'Active' : 'Inactive'}
                                             </span>
                                         </td>
-                                        <td className="p-4">
+                                        <td className="p-4 flex items-center gap-2">
                                             <button
                                                 onClick={() => navigate(`/admin/intern-performance/${intern._id}`)}
-                                                className="text-blue-600 hover:text-blue-800 p-2 hover:bg-blue-50 rounded-full transition-colors title='View Performance'"
+                                                className="text-blue-600 hover:text-blue-800 p-2 hover:bg-blue-50 rounded-full transition-colors"
+                                                title="View Performance"
                                             >
                                                 <Eye size={18} />
+                                            </button>
+                                            <button
+                                                onClick={() => handleDelete(intern)}
+                                                className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-full transition-colors"
+                                                title="Delete PG"
+                                            >
+                                                <Trash size={18} />
                                             </button>
                                         </td>
                                     </tr>

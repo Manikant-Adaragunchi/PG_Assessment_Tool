@@ -103,8 +103,8 @@ const PgMyEvaluation = () => {
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
                         className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg text-sm font-semibold transition-all whitespace-nowrap ${activeTab === tab.id
-                                ? 'bg-blue-600 text-white shadow-md'
-                                : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700'
+                            ? 'bg-blue-600 text-white shadow-md'
+                            : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700'
                             }`}
                     >
                         {tab.icon}
@@ -164,18 +164,43 @@ const PgMyEvaluation = () => {
                                     <div className="flex justify-between items-start mb-2">
                                         <div>
                                             <h3 className="font-bold text-lg text-gray-800">{att.surgeryName}</h3>
-                                            <p className="text-sm text-gray-500">{new Date(att.date).toLocaleDateString()} • {att.patientId}</p>
+                                            <p className="text-sm text-gray-500">{new Date(att.date || att.attemptDate).toLocaleDateString()} • {att.patientName || att.patientId}</p>
                                         </div>
                                         <div className="flex flex-col items-end gap-1">
                                             <StatusBadge status={att.status} />
                                             <GradeBadge grade={att.grade} />
                                         </div>
                                     </div>
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mt-3 bg-gray-50 p-3 rounded-lg">
-                                        <div><span className="text-gray-500 text-xs">Pre-Op</span><div className="font-semibold">{att.scores?.preOp}/5</div></div>
-                                        <div><span className="text-gray-500 text-xs">Procedure</span><div className="font-semibold">{att.scores?.procedure}/10</div></div>
-                                        <div><span className="text-gray-500 text-xs">Post-Op</span><div className="font-semibold">{att.scores?.postOp}/5</div></div>
-                                        <div><span className="text-gray-500 text-xs">Total</span><div className="font-bold text-blue-600">{att.totalScore}/20</div></div>
+                                    <div className="mt-4 border-t border-gray-100 pt-3">
+                                        <h4 className="text-xs font-bold text-gray-400 uppercase mb-2">Detailed Assessment</h4>
+                                        <div className="overflow-x-auto">
+                                            <table className="w-full text-sm">
+                                                <thead className="bg-gray-50 text-xs text-gray-500 uppercase">
+                                                    <tr>
+                                                        <th className="px-3 py-2 text-left rounded-l-lg">Step</th>
+                                                        <th className="px-3 py-2 text-center">Score</th>
+                                                        <th className="px-3 py-2 text-left rounded-r-lg">Remarks</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody className="divide-y divide-gray-50">
+                                                    {att.answers && att.answers.map((ans, i) => (
+                                                        <tr key={i} className="hover:bg-gray-50/50 transition-colors">
+                                                            <td className="px-3 py-2 font-medium text-gray-700">{ans.itemKey.replace(/_/g, ' ')}</td>
+                                                            <td className="px-3 py-2 text-center font-bold text-blue-600">{ans.scoreValue}/5</td>
+                                                            <td className="px-3 py-2 text-gray-500 italic">{ans.remark || '-'}</td>
+                                                        </tr>
+                                                    ))}
+                                                    <tr className="bg-blue-50/50 font-bold">
+                                                        <td className="px-3 py-2 text-blue-800 text-right">Total</td>
+                                                        <td className="px-3 py-2 text-center text-blue-800">
+                                                            {att.answers ? att.answers.reduce((sum, a) => sum + (a.scoreValue || 0), 0) : 0}
+                                                            <span className="text-xs font-normal text-blue-600">/25</span>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                     {att.remarks && <p className="mt-3 text-sm text-gray-600 italic">"{att.remarks}"</p>}
                                 </div>

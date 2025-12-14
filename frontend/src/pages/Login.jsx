@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
+import loginLogo from '../assets/login_logo.jpg';
+import loginBg from '../assets/login_bg.jpg';
+
 const Login = () => {
     const { login } = useAuth();
     const navigate = useNavigate();
@@ -49,31 +52,34 @@ const Login = () => {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center relative overflow-hidden font-sans bg-gradient-to-br from-blue-900 to-slate-900">
-            {/* Professional Overlay: Gradient Blue-Black for readability */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-black/60 backdrop-blur-[2px] z-0"></div>
+        <div
+            className="min-h-screen flex items-center justify-center relative overflow-hidden font-sans bg-cover bg-center"
+            style={{ backgroundImage: `url(${loginBg})` }}
+        >
+            {/* Professional Overlay: Deep Navy Blue (Less Saturated) */}
+            <div className="absolute inset-0 bg-blue-900/50 backdrop-blur-[2px] z-0"></div>
 
             <div className="relative z-10 w-full max-w-md p-6 animate-fade-in-up">
-                {/* Glassmorphism Card */}
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-10 rounded-2xl shadow-2xl shadow-blue-900/50">
+                {/* Glassmorphism Card: Light, removed darkness */}
+                <div className="bg-white/10 backdrop-blur-lg border border-white/30 p-10 rounded-2xl shadow-xl shadow-blue-900/20 flex flex-col items-center">
 
                     {/* Header Section */}
-                    <div className="text-center mb-10">
-                        <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg ring-4 ring-white/20">
-                            {/* Medical Cross Icon */}
-                            <svg className="w-10 h-10 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                            </svg>
+                    <div className="text-center mb-10 w-full">
+                        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg ring-4 ring-white/40 overflow-hidden">
+                            <img src={loginLogo} alt="SDM Logo" className="w-full h-full object-cover" />
                         </div>
-                        <h1 className="text-3xl font-bold text-white mb-2 tracking-tight drop-shadow-md">SDM Medical Science<br /><span className="text-blue-200 text-2xl font-medium">and Hospital</span></h1>
-                        <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full mt-3 mb-2"></div>
-                        <p className="text-blue-100 text-sm font-medium tracking-wide border px-3 py-1 rounded-full border-blue-400/30 inline-block bg-blue-900/30">
+                        <h1 className="text-3xl font-bold text-white mb-2 tracking-tight drop-shadow-md">
+                            SDM Medical Science<br />
+                            <span className="text-white text-2xl font-medium">and Hospital</span>
+                        </h1>
+                        <div className="h-1 w-20 bg-white/50 mx-auto rounded-full mt-3 mb-2"></div>
+                        <p className="text-white text-sm font-medium tracking-wide border px-3 py-1 rounded-full border-white/40 inline-block bg-white/10">
                             PG Assessment Portal
                         </p>
                     </div>
 
                     {/* Login Form */}
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6 w-full">
                         {error && (
                             <div className="bg-red-500/80 border border-red-400 text-white text-sm p-3 rounded-lg text-center backdrop-blur-sm shadow-sm flex items-center justify-center gap-2">
                                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -83,7 +89,7 @@ const Login = () => {
 
                         <div className="space-y-4">
                             <div className="relative group">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-blue-200 group-focus-within:text-white transition-colors">
+                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-blue-100 group-focus-within:text-white transition-colors">
                                     <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
@@ -91,7 +97,7 @@ const Login = () => {
                                 <input
                                     type="email"
                                     required
-                                    className="block w-full pl-10 pr-3 py-3 border border-blue-300/30 rounded-lg leading-5 bg-white/10 text-white placeholder-blue-200 focus:outline-none focus:bg-white/20 focus:border-white focus:ring-1 focus:ring-white transition-all duration-200 sm:text-sm"
+                                    className="block w-full pl-10 pr-3 py-3 border border-white/30 rounded-lg leading-5 bg-blue-50/20 text-white placeholder-blue-100 focus:outline-none focus:bg-blue-50/30 focus:border-white focus:ring-1 focus:ring-white transition-all duration-200 sm:text-sm shadow-inner"
                                     placeholder="Enter your email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
@@ -99,7 +105,7 @@ const Login = () => {
                             </div>
 
                             <div className="relative group">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-blue-200 group-focus-within:text-white transition-colors">
+                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-blue-100 group-focus-within:text-white transition-colors">
                                     <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                     </svg>
@@ -107,7 +113,7 @@ const Login = () => {
                                 <input
                                     type="password"
                                     required
-                                    className="block w-full pl-10 pr-3 py-3 border border-blue-300/30 rounded-lg leading-5 bg-white/10 text-white placeholder-blue-200 focus:outline-none focus:bg-white/20 focus:border-white focus:ring-1 focus:ring-white transition-all duration-200 sm:text-sm"
+                                    className="block w-full pl-10 pr-3 py-3 border border-white/30 rounded-lg leading-5 bg-blue-50/20 text-white placeholder-blue-100 focus:outline-none focus:bg-blue-50/30 focus:border-white focus:ring-1 focus:ring-white transition-all duration-200 sm:text-sm shadow-inner"
                                     placeholder="Enter your password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
@@ -133,14 +139,14 @@ const Login = () => {
                     </form>
 
                     {/* Developer Shortcuts */}
-                    <div className="mt-8 pt-6 border-t border-white/10 text-center">
-                        <p className="text-center text-[10px] text-blue-200 mb-3 uppercase tracking-widest opacity-60">Developer Access</p>
+                    <div className="mt-8 pt-6 border-t border-white/20 text-center w-full">
+                        <p className="text-center text-[10px] text-white/70 mb-3 uppercase tracking-widest">Developer Access</p>
                         <div className="flex justify-center gap-2">
                             {['HOD', 'FACULTY', 'INTERN'].map(role => (
                                 <button
                                     key={role}
                                     onClick={() => setDemoParams(role)}
-                                    className="px-3 py-1 bg-white/5 border border-white/10 rounded text-[10px] text-blue-100 hover:bg-white/20 hover:text-white transition"
+                                    className="px-3 py-1 bg-white/10 border border-white/20 rounded text-[10px] text-white/90 hover:bg-white/30 hover:text-white transition"
                                 >
                                     {role}
                                 </button>
@@ -149,7 +155,7 @@ const Login = () => {
                     </div>
                 </div>
 
-                <p className="text-center text-blue-200/60 text-xs mt-6">
+                <p className="text-center text-white/60 text-xs mt-6 drop-shadow-sm">
                     &copy; {new Date().getFullYear()} SDM Medical Science and Hospital
                 </p>
             </div>

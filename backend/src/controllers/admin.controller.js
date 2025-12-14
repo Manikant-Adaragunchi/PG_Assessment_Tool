@@ -283,3 +283,47 @@ exports.getInterns = async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 };
+
+// Delete Student with Cascade
+exports.deleteStudent = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const user = await User.findById(id);
+
+        if (!user) {
+            return res.status(404).json({ success: false, error: 'User not found' });
+        }
+
+        if (user.role !== 'INTERN') {
+            return res.status(400).json({ success: false, error: 'Only interns can be deleted via this endpoint' });
+        }
+
+        // Cascade Delete
+        await Promise.all([
+            // Delete Evaluations
+            require('../models/OpdEvaluation').deleteMany({ internId: id }),
+            require('../models/SurgeryEvaluation').deleteMany({ internId: id }),
+            require('../models/WetlabEvaluation').deleteMany({ internId: id }),
+            require('../models/AcademicEvaluation').deleteMany({ internId: id }),
+            // Delete Competency
+            require('../models/OpdCompetency').deleteMany({ internId: id }),
+            // Remove from Batch
+            Batch.updateMany({ 'interns.userId': id }, { $pull: { interns: { userId: id } } })
+        ]);
+
+        await User.findByIdAndDelete(id);
+
+        await AuditLog.create({
+            userId: req.user._id,
+            action: 'DELETE_INTERN',
+            targetType: 'User',
+            targetId: id,
+            meta: { deletedEmail: user.email }
+        });
+
+        res.status(200).json({ success: true, message: 'Intern and all associated data deleted successfully' });
+    } catch (error) {
+        console.error("Delete Student Error:", error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+};

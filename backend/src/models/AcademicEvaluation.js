@@ -14,7 +14,7 @@ const AcademicEvaluationSchema = new mongoose.Schema({
         evaluationType: {
             type: String,
             enum: ['SEMINAR', 'CASE_PRESENTATION', 'JOURNAL_CLUB'],
-            required: true
+            required: false
         },
         topic: String,
         scores: {
@@ -29,7 +29,12 @@ const AcademicEvaluationSchema = new mongoose.Schema({
             type: String,
             enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED'],
             default: 'PENDING_ACK'
-        }
+        },
+        acknowledgedBy: {
+            userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+            fullName: String
+        },
+        acknowledgedAt: { type: Date }
     }]
 }, { timestamps: true });
 

@@ -79,6 +79,15 @@ export const getInternList = async () => {
     }
 };
 
+export const deleteIntern = async (id) => {
+    try {
+        const response = await api.delete(`/admin/interns/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
 export const getDashboardStats = async () => {
     try {
         const response = await api.get('/admin/stats');

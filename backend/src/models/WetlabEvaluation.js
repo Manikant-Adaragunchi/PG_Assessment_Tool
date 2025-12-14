@@ -25,7 +25,12 @@ const WetlabEvaluationSchema = new mongoose.Schema({
             type: String,
             enum: ['TEMPORARY', 'PENDING_ACK', 'ACKNOWLEDGED', 'PERMANENT', 'COMPLETED'],
             default: 'PENDING_ACK'
-        }
+        },
+        acknowledgedBy: {
+            userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+            fullName: String
+        },
+        acknowledgedAt: { type: Date }
     }]
 }, { timestamps: true });
 

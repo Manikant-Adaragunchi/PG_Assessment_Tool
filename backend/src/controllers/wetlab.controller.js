@@ -114,6 +114,7 @@ exports.editAttempt = async (req, res) => {
 };
 
 // GET /wetlab/:internId
+
 exports.getAttempts = async (req, res) => {
     try {
         const { internId } = req.params;
@@ -128,3 +129,35 @@ exports.getAttempts = async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 };
+
+// POST /wetlab/:internId/attempts/:attemptNumber/acknowledge
+exports.acknowledgeAttempt = async (req, res) => {
+    try {
+        const { internId, attemptNumber } = req.params;
+
+        if (req.user._id.toString() !== internId) {
+            return res.status(403).json({ success: false, error: 'Cannot acknowledge another intern\'s evaluation' });
+        }
+
+        const evalDoc = await WetLabEvaluation.findOne({ internId });
+        if (!evalDoc) return res.status(404).json({ success: false, error: 'Evaluation not found' });
+
+        const attempt = evalDoc.attempts.find(a => a.attemptNumber === parseInt(attemptNumber));
+        if (!attempt) return res.status(404).json({ success: false, error: 'Attempt not found' });
+
+        if (attempt.status !== 'PENDING_ACK') {
+            return res.status(400).json({ success: false, error: `Cannot acknowledge attempt with status ${attempt.status}` });
+        }
+
+        attempt.status = 'ACKNOWLEDGED';
+        attempt.acknowledgedBy = { userId: req.user._id, fullName: req.user.fullName };
+        attempt.acknowledgedAt = new Date();
+
+        await evalDoc.save();
+
+        res.status(200).json({ success: true, data: attempt });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+};
+

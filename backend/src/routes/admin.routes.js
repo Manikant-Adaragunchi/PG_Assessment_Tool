@@ -20,6 +20,7 @@ router.delete('/faculty/:id', authorize('HOD'), require('../controllers/admin.co
 // Intern Management
 // Get Interns - Accessible to HOD and FACULTY
 router.get('/interns', authorize('HOD', 'FACULTY'), require('../controllers/admin.controller').getInterns);
+router.delete('/interns/:id', authorize('HOD'), require('../controllers/admin.controller').deleteStudent);
 
 // Batch Management - HOD Only
 router.post('/batches', authorize('HOD'), createBatch);
@@ -27,7 +28,7 @@ router.get('/batches', authorize('HOD'), getBatches);
 router.delete('/batches/:id', authorize('HOD'), require('../controllers/admin.controller').deleteBatch);
 
 // Exports - HOD Only
-router.get('/export/batch/:batchId', authorize('HOD'), exportBatchExcel); // Excel
+router.get('/export/batch/:batchId', authorize('HOD', 'FACULTY'), exportBatchExcel); // Excel
 router.get('/export/intern/:internId', authorize('HOD', 'FACULTY'), exportInternReport); // PDF
 
 module.exports = router;

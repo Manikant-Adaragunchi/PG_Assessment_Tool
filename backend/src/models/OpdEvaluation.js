@@ -4,6 +4,7 @@ const OpdAttemptSchema = new mongoose.Schema({
     attemptNumber: { type: Number, required: true },
     attemptDate: { type: Date, required: true },
     facultyId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    procedureName: { type: String, required: true },
 
     answers: [{
         itemKey: { type: String, required: true },

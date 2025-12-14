@@ -6,7 +6,22 @@
 
 @layer base {
   body {
-    @apply font-sans antialiased text-surface-800 bg-surface-50;
+    @apply font-sans antialiased text-surface-800 bg-surface-50 relative min-h-screen;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/watermark.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
   }
 }
 
@@ -29,6 +44,36 @@
 
   .badge {
     @apply px-2.5 py-1 rounded-full text-xs font-semibold tracking-wide uppercase;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

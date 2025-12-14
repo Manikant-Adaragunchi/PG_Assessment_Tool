@@ -14,6 +14,7 @@ router.get('/interns/validate/:identifier', authorize('FACULTY', 'HOD'), internC
 // Surgery Routes
 router.post('/surgery/:internId/attempts', authorize('FACULTY', 'HOD'), surgeryController.addAttempt);
 router.put('/surgery/:internId/attempts/:attemptNumber', authorize('FACULTY', 'HOD'), surgeryController.editAttempt);
+router.post('/surgery/:internId/attempts/:attemptNumber/acknowledge', authorize('INTERN'), surgeryController.acknowledgeAttempt);
 router.get('/surgery/:internId', surgeryController.getAttempts); // Intern can access too
 
 // OPD Routes
@@ -25,12 +26,14 @@ router.get('/opd/:moduleCode/:internId', opdController.getAttempts);
 const academicController = require('../controllers/academic.controller');
 router.post('/academic/:internId/attempts', authorize('FACULTY', 'HOD'), academicController.addAttempt);
 router.put('/academic/:internId/attempts/:attemptNumber', authorize('FACULTY', 'HOD'), academicController.editAttempt);
+router.post('/academic/:internId/attempts/:attemptNumber/acknowledge', authorize('INTERN'), academicController.acknowledgeAttempt);
 router.get('/academic/:internId', academicController.getAttempts);
 
 // WetLab Routes
 const wetlabController = require('../controllers/wetlab.controller');
 router.post('/wetlab/:internId/attempts', authorize('FACULTY', 'HOD'), wetlabController.addAttempt);
 router.put('/wetlab/:internId/attempts/:attemptNumber', authorize('FACULTY', 'HOD'), wetlabController.editAttempt);
+router.post('/wetlab/:internId/attempts/:attemptNumber/acknowledge', authorize('INTERN'), wetlabController.acknowledgeAttempt);
 router.get('/wetlab/:internId', wetlabController.getAttempts);
 
 module.exports = router;

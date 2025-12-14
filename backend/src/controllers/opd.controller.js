@@ -12,7 +12,7 @@ exports.addAttempt = async (req, res) => {
     try {
         console.log('OPD Add Attempt Request:', req.params, req.body); // Debug Log
         const { moduleCode, internId } = req.params;
-        const { attemptDate, answers, grade } = req.body; // Added grade
+        const { attemptDate, answers, grade, procedureName } = req.body; // Added grade & procedureName
 
         // 1. Validation & Result Calculation
         let isPass = true;
@@ -30,7 +30,7 @@ exports.addAttempt = async (req, res) => {
             evalDoc = new OpdEvaluation({ internId, moduleCode, attempts: [] });
         }
 
-        // 3. Calculate Consecutive Streak (Retroactive + Current)
+        // 3. Calculate Consecutive Streak (Retroactive + Current) for THIS PROCEDURE
         let consecutiveStr = 0;
 
         // We only care about streak if current is PASS. If current Fail, streak is 0.
@@ -38,16 +38,19 @@ exports.addAttempt = async (req, res) => {
             consecutiveStr = 1; // Current one
             // Look backwards
             for (let i = evalDoc.attempts.length - 1; i >= 0; i--) {
-                if (evalDoc.attempts[i].result === 'PASS') {
-                    consecutiveStr++;
-                } else {
-                    break; // Streak broken
+                // Only consider attempts for the same procedure
+                if (evalDoc.attempts[i].procedureName === procedureName) {
+                    if (evalDoc.attempts[i].result === 'PASS') {
+                        consecutiveStr++;
+                    } else {
+                        break; // Streak broken
+                    }
                 }
             }
         } else {
             consecutiveStr = 0;
         }
-        console.log('Calculated Streak:', consecutiveStr); // Debug Log
+        console.log(`Calculated Streak for ${procedureName}:`, consecutiveStr); // Debug Log
 
         // 4. Determine Status
         const status = (consecutiveStr >= 3) ? 'PERMANENT' : 'TEMPORARY';
@@ -58,6 +61,7 @@ exports.addAttempt = async (req, res) => {
             attemptNumber: evalDoc.attempts.length + 1,
             attemptDate: attemptDate || new Date(),
             facultyId: req.user._id,
+            procedureName, // Save the Procedure Name!
             answers,
             status: status,
             result: result,
@@ -167,7 +171,8 @@ exports.acknowledgeAttempt = async (req, res) => {
 exports.getAttempts = async (req, res) => {
     try {
         const { internId, moduleCode } = req.params;
-        const evaluation = await OpdEvaluation.findOne({ internId, moduleCode });
+        const evaluation = await OpdEvaluation.findOne({ internId, moduleCode })
+            .populate('attempts.facultyId', 'fullName');
 
         if (!evaluation) {
             return res.status(200).json({ success: true, count: 0, data: [] });
