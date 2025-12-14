@@ -23,6 +23,7 @@ exports.createFaculty = async (req, res) => {
             fullName,
             email,
             gender: gender || 'M',
+            areaOfExpertise: req.body.areaOfExpertise, // Add Area of Expertise
             password: onboardingCode, // Will be hashed by pre-save hook
             role: 'FACULTY'
         });
@@ -226,6 +227,7 @@ exports.updateFaculty = async (req, res) => {
         user.email = email || user.email;
         if (role) user.role = role;
         if (req.body.gender) user.gender = req.body.gender;
+        if (req.body.areaOfExpertise) user.areaOfExpertise = req.body.areaOfExpertise;
 
         await user.save();
 

@@ -6,7 +6,15 @@ const FacultyList = () => {
     const [loading, setLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingId, setEditingId] = useState(null);
-    const [formData, setFormData] = useState({ fullName: '', email: '', role: 'FACULTY', gender: 'M' });
+    const [formData, setFormData] = useState({ fullName: '', email: '', role: 'FACULTY', gender: 'M', areaOfExpertise: '' });
+
+    // Notification State
+    const [notification, setNotification] = useState({ show: false, message: '', type: 'success' }); // type: success | error
+
+    const showNotification = (message, type = 'success') => {
+        setNotification({ show: true, message, type });
+        setTimeout(() => setNotification({ ...notification, show: false }), 3000);
+    };
 
     const fetchFaculty = async () => {
         try {
@@ -16,6 +24,7 @@ const FacultyList = () => {
             }
         } catch (err) {
             console.error("Failed to fetch faculty", err);
+            showNotification("Failed to fetch faculty list", 'error');
         } finally {
             setLoading(false);
         }
@@ -27,7 +36,7 @@ const FacultyList = () => {
 
     const handleOpenAdd = () => {
         setEditingId(null);
-        setFormData({ fullName: '', email: '', role: 'FACULTY', gender: 'M' });
+        setFormData({ fullName: '', email: '', role: 'FACULTY', gender: 'M', areaOfExpertise: '' });
         setIsModalOpen(true);
     };
 
@@ -37,7 +46,8 @@ const FacultyList = () => {
             fullName: facultyMember.fullName,
             email: facultyMember.email,
             role: facultyMember.role,
-            gender: facultyMember.gender || 'M'
+            gender: facultyMember.gender || 'M',
+            areaOfExpertise: facultyMember.areaOfExpertise || ''
         });
         setIsModalOpen(true);
     };
@@ -49,16 +59,16 @@ const FacultyList = () => {
 
             if (editingId) {
                 await updateFaculty(editingId, formData);
-                alert("Faculty updated successfully!");
+                showNotification("Faculty updated successfully!");
             } else {
                 await createFaculty(formData);
-                alert("Faculty added successfully!");
+                showNotification("Faculty added successfully!");
             }
 
             setIsModalOpen(false);
             fetchFaculty();
         } catch (err) {
-            alert("Operation failed: " + (err.error || err));
+            showNotification("Operation failed: " + (err.error || err), 'error');
         }
     };
 
@@ -71,7 +81,28 @@ const FacultyList = () => {
     };
 
     return (
-        <div>
+        <div className="relative">
+            {/* Notification Toast */}
+            {notification.show && (
+                <div className={`fixed top-4 right-4 z-[100] px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 transform transition-all duration-300 animate-fade-in-down ${notification.type === 'success'
+                        ? 'bg-green-500 text-white shadow-green-500/30'
+                        : 'bg-red-500 text-white shadow-red-500/30'
+                    }`}>
+                    {notification.type === 'success' ? (
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    ) : (
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    )}
+                    <div>
+                        <h4 className="font-bold text-sm uppercase tracking-wide">{notification.type === 'success' ? 'Success' : 'Error'}</h4>
+                        <p className="text-sm font-medium opacity-90">{notification.message}</p>
+                    </div>
+                    <button onClick={() => setNotification({ ...notification, show: false })} className="ml-2 hover:bg-white/20 rounded-full p-1 transition">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+            )}
+
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-2xl font-bold text-gray-800">Department Faculty</h1>
                 <button
@@ -88,7 +119,7 @@ const FacultyList = () => {
                         <tr className="bg-gray-50 border-b border-gray-200 text-xs text-gray-500 uppercase">
                             <th className="p-4 font-semibold">Name</th>
                             <th className="p-4 font-semibold">Email</th>
-                            <th className="p-4 font-semibold">Role</th>
+                            <th className="p-4 font-semibold">Role & Expertise</th>
                             <th className="p-4 font-semibold text-right">Actions</th>
                         </tr>
                     </thead>
@@ -101,9 +132,16 @@ const FacultyList = () => {
                                 </td>
                                 <td className="p-4 text-gray-600">{f.email}</td>
                                 <td className="p-4">
-                                    <span className={`text-xs px-2 py-1 rounded-full font-bold ${f.role === 'HOD' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}`}>
-                                        {f.role}
-                                    </span>
+                                    <div className="flex flex-col gap-1">
+                                        <span className={`text-xs px-2 py-1 rounded-full font-bold w-fit ${f.role === 'HOD' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}`}>
+                                            {f.role}
+                                        </span>
+                                        {f.areaOfExpertise && (
+                                            <span className="text-xs text-gray-500 font-medium">
+                                                {f.areaOfExpertise}
+                                            </span>
+                                        )}
+                                    </div>
                                 </td>
                                 <td className="p-4 text-right">
                                     <button
@@ -119,8 +157,9 @@ const FacultyList = () => {
                                                     const { deleteFaculty } = await import('../../services/adminApi');
                                                     await deleteFaculty(f._id);
                                                     fetchFaculty();
+                                                    showNotification("Faculty deleted successfully");
                                                 } catch (e) {
-                                                    alert('Failed to delete: ' + e);
+                                                    showNotification('Failed to delete: ' + e, 'error');
                                                 }
                                             }
                                         }}
@@ -177,6 +216,16 @@ const FacultyList = () => {
                                     <option value="F">Female</option>
                                     <option value="O">Other</option>
                                 </select>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Area of Expertise</label>
+                                <input
+                                    type="text"
+                                    className="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary-500 outline-none"
+                                    placeholder="e.g. Cardiology, Neurology"
+                                    value={formData.areaOfExpertise}
+                                    onChange={e => setFormData({ ...formData, areaOfExpertise: e.target.value })}
+                                />
                             </div>
                             <div className="flex justify-end gap-3 mt-6">
                                 <button

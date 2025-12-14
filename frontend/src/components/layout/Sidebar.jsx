@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { getRoleLinks } from '../../utils/roles';
+import loginLogo from '../../assets/login_logo.jpg';
 
 const Sidebar = () => {
     const { user, logout } = useAuth();
@@ -17,10 +18,8 @@ const Sidebar = () => {
         <aside className="fixed left-0 top-0 h-screen w-72 bg-surface-900 text-white flex flex-col shadow-2xl z-50 font-sans">
             {/* Logo Area */}
             <div className="p-8 pb-4 flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-tr from-primary-500 to-secondary-400 rounded-xl flex items-center justify-center shadow-glow">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-glow ring-2 ring-white/10 overflow-hidden shrink-0">
+                    <img src={loginLogo} alt="SDM Logo" className="w-full h-full object-cover" />
                 </div>
                 <div>
                     <h1 className="text-sm font-bold tracking-tight leading-tight">SDM Medical Science<br /><span className="text-primary-400">and Hospital</span></h1>

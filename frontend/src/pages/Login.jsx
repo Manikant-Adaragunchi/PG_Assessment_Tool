@@ -60,8 +60,8 @@ const Login = () => {
             <div className="absolute inset-0 bg-blue-900/50 backdrop-blur-[2px] z-0"></div>
 
             <div className="relative z-10 w-full max-w-md p-6 animate-fade-in-up">
-                {/* Glassmorphism Card: Light, removed darkness */}
-                <div className="bg-white/10 backdrop-blur-lg border border-white/30 p-10 rounded-2xl shadow-xl shadow-blue-900/20 flex flex-col items-center">
+                {/* Glassmorphism Card: Shaded with dark blue tint */}
+                <div className="bg-blue-950/20 backdrop-blur-lg border border-white/30 p-10 rounded-2xl shadow-xl shadow-blue-900/20 flex flex-col items-center">
 
                     {/* Header Section */}
                     <div className="text-center mb-10 w-full">
@@ -73,7 +73,7 @@ const Login = () => {
                             <span className="text-white text-2xl font-medium">and Hospital</span>
                         </h1>
                         <div className="h-1 w-20 bg-white/50 mx-auto rounded-full mt-3 mb-2"></div>
-                        <p className="text-white text-sm font-medium tracking-wide border px-3 py-1 rounded-full border-white/40 inline-block bg-white/10">
+                        <p className="text-white text-sm font-medium tracking-wide border px-3 py-1 rounded-full border-blue-400/30 inline-block bg-blue-500/20">
                             PG Assessment Portal
                         </p>
                     </div>

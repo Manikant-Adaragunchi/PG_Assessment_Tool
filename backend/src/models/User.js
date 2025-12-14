@@ -28,6 +28,10 @@ const UserSchema = new mongoose.Schema({
         enum: ['M', 'F', 'O'],
         default: 'M' // Defaulting to M for now to avoid breaking existing without migration
     },
+    areaOfExpertise: {
+        type: String,
+        required: false
+    },
     regNo: {
         type: String // Optional, mainly for interns
     },
