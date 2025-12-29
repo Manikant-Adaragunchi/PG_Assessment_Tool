@@ -24,19 +24,19 @@ exports.sendOnboardingEmail = async (email, password, role, fullName = 'User') =
     const loginLink = 'http://localhost:5173/login'; // Env var in prod
 
     const info = await transporter.sendMail({
-      from: '"SDM Medical Science and Hospital Admin" <admin@sdmmedical.edu>',
+      from: '"SDM College of Medical Science & Hospital Admin" <admin@sdmmedical.edu>',
       to: email,
-      subject: 'Welcome to SDM Medical Science and Hospital - Your Login Credentials',
+      subject: 'Welcome to SDM College of Medical Science & Hospital - Your Login Credentials',
       html: `
 <!DOCTYPE html>
 <html>
 <body style="font-family: Arial, sans-serif; color: #333; padding: 20px;">
   <div style="max-width: 600px; margin: auto; border: 1px solid #e5e5e5; border-radius: 8px; padding: 20px;">
     
-    <h2 style="color: #0066cc; text-align: center;">Welcome to SDM Medical Science and Hospital</h2>
+    <h2 style="color: #0066cc; text-align: center;">Welcome to SDM College of Medical Science & Hospital</h2>
     <p>Dear <b>${fullName}</b>,</p>
 
-    <p>Your account has been successfully created in the <b>SDM Medical Science and Hospital – PG Assessment Tool</b>.</p>
+    <p>Your account has been successfully created in the <b>SDM College of Medical Science & Hospital – PG Assessment Tool</b>.</p>
 
     <h3 style="color: #0066cc;">Your Login Credentials</h3>
     <p><b>Email:</b> ${email}</p>
@@ -50,7 +50,7 @@ exports.sendOnboardingEmail = async (email, password, role, fullName = 'User') =
     <p>
       <a href="${loginLink}" 
          style="background:#0066cc;color:#fff;padding:10px 16px;text-decoration:none;border-radius:5px;display:inline-block;">
-        Login to SDM Medical Science and Hospital
+        Login to SDM College of Medical Science & Hospital
       </a>
     </p>
 
@@ -65,7 +65,7 @@ exports.sendOnboardingEmail = async (email, password, role, fullName = 'User') =
 
     <br/>
     <p>Regards,<br/>
-    <b>SDM Medical Science and Hospital Administration Team</b></p>
+    <b>SDM College of Medical Science & Hospital Administration Team</b></p>
 
   </div>
 </body>

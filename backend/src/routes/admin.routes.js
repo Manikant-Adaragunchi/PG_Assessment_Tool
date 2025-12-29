@@ -26,6 +26,7 @@ router.delete('/interns/:id', authorize('HOD'), require('../controllers/admin.co
 router.post('/batches', authorize('HOD'), createBatch);
 router.get('/batches', authorize('HOD'), getBatches);
 router.delete('/batches/:id', authorize('HOD'), require('../controllers/admin.controller').deleteBatch);
+router.delete('/batches/:id/permanent', authorize('HOD'), require('../controllers/admin.controller').deleteBatchPermanently);
 
 // Exports - HOD Only
 router.get('/export/batch/:batchId', authorize('HOD', 'FACULTY'), exportBatchExcel); // Excel

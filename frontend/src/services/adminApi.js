@@ -27,6 +27,15 @@ export const deleteBatch = async (id) => {
     }
 };
 
+export const deleteBatchPermanently = async (id) => {
+    try {
+        const response = await api.delete(`/admin/batches/${id}/permanent`);
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || error.message;
+    }
+};
+
 export const createFaculty = async (facultyData) => {
     try {
         const response = await api.post('/admin/faculty', facultyData);

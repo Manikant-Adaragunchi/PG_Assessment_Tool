@@ -3,8 +3,11 @@ import {
     getOpdAttempts,
     acknowledgeOpdAttempt,
     getSurgeryAttempts,
+    acknowledgeSurgeryAttempt,
     getWetlabAttempts,
-    getAcademicAttempts
+    acknowledgeWetlabAttempt,
+    getAcademicAttempts,
+    acknowledgeAcademicAttempt
 } from '../../services/evaluationApi';
 import { useAuth } from '../../context/AuthContext';
 import {
@@ -79,6 +82,45 @@ const PgMyEvaluation = () => {
             setData(prev => ({
                 ...prev,
                 opd: prev.opd.map(a => a.attemptNumber === attemptNumber ? { ...a, status: 'ACKNOWLEDGED' } : a)
+            }));
+        } catch (err) {
+            alert("Error: " + (err.error || err.message));
+        }
+    };
+
+    const handleAcknowledgeSurgery = async (attemptNumber) => {
+        if (!window.confirm("Acknowledge this evaluation? This cannot be undone.")) return;
+        try {
+            await acknowledgeSurgeryAttempt(user._id, attemptNumber);
+            setData(prev => ({
+                ...prev,
+                surgery: prev.surgery.map(a => a.attemptNumber === attemptNumber ? { ...a, status: 'ACKNOWLEDGED' } : a)
+            }));
+        } catch (err) {
+            alert("Error: " + (err.error || err.message));
+        }
+    };
+
+    const handleAcknowledgeWetlab = async (attemptNumber) => {
+        if (!window.confirm("Acknowledge this evaluation? This cannot be undone.")) return;
+        try {
+            await acknowledgeWetlabAttempt(user._id, attemptNumber);
+            setData(prev => ({
+                ...prev,
+                wetlab: prev.wetlab.map(a => a.attemptNumber === attemptNumber ? { ...a, status: 'ACKNOWLEDGED' } : a)
+            }));
+        } catch (err) {
+            alert("Error: " + (err.error || err.message));
+        }
+    };
+
+    const handleAcknowledgeAcademic = async (attemptNumber) => {
+        if (!window.confirm("Acknowledge this evaluation? This cannot be undone.")) return;
+        try {
+            await acknowledgeAcademicAttempt(user._id, attemptNumber);
+            setData(prev => ({
+                ...prev,
+                academic: prev.academic.map(a => a.attemptNumber === attemptNumber ? { ...a, status: 'ACKNOWLEDGED' } : a)
             }));
         } catch (err) {
             alert("Error: " + (err.error || err.message));
@@ -203,6 +245,16 @@ const PgMyEvaluation = () => {
                                         </div>
                                     </div>
                                     {att.remarks && <p className="mt-3 text-sm text-gray-600 italic">"{att.remarks}"</p>}
+                                    {att.status === 'PENDING_ACK' && (
+                                        <div className="mt-4 pt-4 border-t border-gray-100 flex justify-end">
+                                            <button
+                                                onClick={() => handleAcknowledgeSurgery(att.attemptNumber)}
+                                                className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition"
+                                            >
+                                                Acknowledge Evaluation
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                         </div>
@@ -232,6 +284,16 @@ const PgMyEvaluation = () => {
                                             </div>
                                         ))}
                                     </div>
+                                    {att.status === 'PENDING_ACK' && (
+                                        <div className="mt-4 pt-4 border-t border-gray-100 flex justify-end">
+                                            <button
+                                                onClick={() => handleAcknowledgeWetlab(att.attemptNumber)}
+                                                className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition"
+                                            >
+                                                Acknowledge Evaluation
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                         </div>
@@ -261,14 +323,25 @@ const PgMyEvaluation = () => {
                                         ))}
                                     </div>
                                     {att.remarks && <p className="mt-3 text-sm text-gray-600 italic">"{att.remarks}"</p>}
+                                    {att.status === 'PENDING_ACK' && (
+                                        <div className="mt-4 pt-4 border-t border-gray-100 flex justify-end">
+                                            <button
+                                                onClick={() => handleAcknowledgeAcademic(att.attemptNumber)}
+                                                className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition"
+                                            >
+                                                Acknowledge Evaluation
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                             {data.academic.length === 0 && <EmptyState message="No Academic evaluations found." />}
                         </div>
                     )}
                 </div>
-            )}
-        </div>
+            )
+            }
+        </div >
     );
 };
 

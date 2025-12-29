@@ -162,24 +162,65 @@ exports.deleteBatch = async (req, res) => {
             return res.status(404).json({ success: false, error: 'Batch not found' });
         }
 
-        // Optional: Remove batchId from users or delete them? 
-        // For safety, we keep users but unset their batchId.
-        await User.updateMany(
-            { batchId: id },
-            { $unset: { batchId: "" } }
-        );
+        // Soft Delete: Just update status to ARCHIVED
+        batch.status = 'ARCHIVED';
+        await batch.save();
 
+        await AuditLog.create({
+            userId: req.user._id,
+            action: 'ARCHIVE_BATCH',
+            targetType: 'Batch',
+            targetId: id,
+            meta: { batchName: batch.name }
+        });
+
+        res.status(200).json({ success: true, message: 'Batch archived successfully' });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+};
+
+exports.deleteBatchPermanently = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const batch = await Batch.findById(id);
+
+        if (!batch) {
+            return res.status(404).json({ success: false, error: 'Batch not found' });
+        }
+
+        // 1. Find all interns in this batch
+        const interns = await User.find({ batchId: id, role: 'INTERN' });
+        const internIds = interns.map(u => u._id);
+
+        if (internIds.length > 0) {
+            // 2. Delete all evaluations and related data for these interns
+            await Promise.all([
+                require('../models/OpdEvaluation').deleteMany({ internId: { $in: internIds } }),
+                require('../models/SurgeryEvaluation').deleteMany({ internId: { $in: internIds } }),
+                require('../models/WetlabEvaluation').deleteMany({ internId: { $in: internIds } }),
+                require('../models/AcademicEvaluation').deleteMany({ internId: { $in: internIds } }),
+                require('../models/OpdCompetency').deleteMany({ internId: { $in: internIds } })
+            ]);
+
+            // 3. Delete the Intern Users themselves
+            await User.deleteMany({ _id: { $in: internIds } });
+        }
+
+        // 4. Finally Delete the Batch
         await Batch.findByIdAndDelete(id);
 
         await AuditLog.create({
             userId: req.user._id,
-            action: 'DELETE_BATCH',
+            action: 'DELETE_BATCH_PERMANENTLY',
             targetType: 'Batch',
-            targetId: id
+            targetId: id,
+            meta: { batchName: batch.name, internsDeletedCount: internIds.length }
         });
 
-        res.status(200).json({ success: true, message: 'Batch deleted successfully' });
+        res.status(200).json({ success: true, message: 'Batch and all associated data deleted permanently' });
     } catch (error) {
+        console.error("Permanent Delete Batch Error:", error);
         res.status(500).json({ success: false, error: error.message });
     }
 };
@@ -277,7 +318,7 @@ exports.getInterns = async (req, res) => {
     try {
         const interns = await User.find({ role: { $in: ['INTERN'] } }) // Minor fix: ensure 'INTERN'
             .select('-password')
-            .populate('batchId', 'name startDate')
+            .populate('batchId', 'name startDate status')
             .sort({ createdAt: -1 });
         // Gender is included by default now as we select everything except password
         res.status(200).json({ success: true, data: interns });

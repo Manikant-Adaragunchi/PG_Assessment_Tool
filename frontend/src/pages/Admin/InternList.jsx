@@ -62,6 +62,11 @@ const InternList = () => {
         // Filter out Unassigned interns as per requirement
         if (batchName === 'Unassigned') return acc;
 
+        // NEW: Filter out interns from Archived or Deleted batches
+        if (intern.batchId && (intern.batchId.status === 'ARCHIVED' || intern.batchId.status === 'DELETED')) {
+            return acc;
+        }
+
         if (!acc[batchName]) {
             acc[batchName] = [];
         }

@@ -31,7 +31,14 @@ exports.addAttempt = async (req, res) => {
         // Basic Status
         const status = 'PENDING_ACK';
 
+        // Fix: Generate attemptNumber
+        // If attempts array is empty, max is 0, so next is 1.
+        // If not empty, find max existing attemptNumber just in case, or safely use length + 1 if we trust sequential.
+        // Using length + 1 is standard for this codebase pattern shown in OPD/Surgery.
+        const attemptNumber = evalDoc.attempts.length + 1;
+
         const newAttempt = {
+            attemptNumber,
             date: new Date(),
             facultyId,
             exerciseName,

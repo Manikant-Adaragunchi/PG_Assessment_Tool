@@ -1,0 +1,110 @@
+classDiagram
+    %% User and Roles
+    class User {
+        +ObjectId _id
+        +String fullName
+        +String email
+        +String role [HOD, FACULTY, INTERN]
+        +String regNo
+        +String areaOfExpertise
+        +ObjectId batchId
+        +String password
+        +Date createdAt
+        +Date updatedAt
+    }
+
+    class Batch {
+        +ObjectId _id
+        +String name
+        +Date startDate
+        +Date endDate
+        +String status [ACTIVE, COMPLETED]
+        +List~Object~ interns
+    }
+
+    %% Core Evaluation Module Definitions
+    class EvaluationModule {
+        +ObjectId _id
+        +String code
+        +String title
+        +String type [score, yesno]
+        +List~Object~ items
+    }
+
+    %% Evaluation Records (Inheritance-like structure via separate collections)
+    class AcademicEvaluation {
+        +ObjectId _id
+        +ObjectId internId
+        +List~Attempt~ attempts
+    }
+
+    class AcademicAttempt {
+        +Number attemptNumber
+        +Date date
+        +ObjectId facultyId
+        +String evaluationType [SEMINAR, CASE, JOURNAL]
+        +String topic
+        +Object scores
+        +String remarks
+        +String status
+    }
+
+    class OpdEvaluation {
+        +ObjectId _id
+        +ObjectId internId
+        +String moduleCode
+        +List~OpdAttempt~ attempts
+    }
+
+    class OpdAttempt {
+        +Number attemptNumber
+        +Date attemptDate
+        +ObjectId facultyId
+        +String procedureName
+        +List~Answer~ answers
+        +String status
+        +String result
+    }
+
+    class SurgeryEvaluation {
+        +ObjectId _id
+        +ObjectId internId
+        +String moduleCode [SURGERY]
+        +List~SurgeryAttempt~ attempts
+    }
+
+    class SurgeryAttempt {
+        +Number attemptNumber
+        +Date attemptDate
+        +ObjectId facultyId
+        +String patientName
+        +String surgeryName
+        +List~Answer~ answers
+        +Number totalScore
+        +String status
+    }
+
+    class WetlabEvaluation {
+        +ObjectId _id
+        +ObjectId internId
+        +String moduleCode
+        +List~WetlabAttempt~ attempts
+    }
+
+    %% Relationships
+    User "1" -- "0..1" Batch : belongs to
+    Batch "1" -- "0..*" User : contains interns
+    
+    AcademicEvaluation "1" -- "1" User : internId
+    OpdEvaluation "1" -- "1" User : internId
+    SurgeryEvaluation "1" -- "1" User : internId
+    WetlabEvaluation "1" -- "1" User : internId
+
+    AcademicEvaluation *-- AcademicAttempt : contains
+    OpdEvaluation *-- OpdAttempt : contains
+    SurgeryEvaluation *-- SurgeryAttempt : contains
+    WetlabEvaluation *-- WetlabAttempt : contains
+
+    AcademicAttempt --> User : facultyId
+    OpdAttempt --> User : facultyId
+    SurgeryAttempt --> User : facultyId

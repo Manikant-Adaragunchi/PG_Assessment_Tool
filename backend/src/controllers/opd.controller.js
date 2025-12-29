@@ -31,15 +31,17 @@ exports.addAttempt = async (req, res) => {
         }
 
         // 3. Calculate Consecutive Streak (Retroactive + Current) for THIS PROCEDURE
+        // Note: Streak calculation here is essentially for display/snapshot. 
+        // Real competency updates happen on Acknowledgement.
         let consecutiveStr = 0;
 
-        // We only care about streak if current is PASS. If current Fail, streak is 0.
         if (isPass) {
             consecutiveStr = 1; // Current one
             // Look backwards
             for (let i = evalDoc.attempts.length - 1; i >= 0; i--) {
                 // Only consider attempts for the same procedure
                 if (evalDoc.attempts[i].procedureName === procedureName) {
+                    // Check if that attempt was a PASS
                     if (evalDoc.attempts[i].result === 'PASS') {
                         consecutiveStr++;
                     } else {
@@ -53,7 +55,9 @@ exports.addAttempt = async (req, res) => {
         console.log(`Calculated Streak for ${procedureName}:`, consecutiveStr); // Debug Log
 
         // 4. Determine Status
-        const status = (consecutiveStr >= 3) ? 'PERMANENT' : 'TEMPORARY';
+        // ALWAYS PENDING_ACK now, to ensure visibility and 2-way ack.
+        // Unless we want to auto-complete for some reason? No, strict 2-way requested.
+        const status = 'PENDING_ACK';
         console.log('Determined Status:', status); // Debug Log
 
         // 5. Add Attempt
@@ -72,22 +76,8 @@ exports.addAttempt = async (req, res) => {
         await evalDoc.save();
         console.log('OpdEvaluation Saved.'); // Debug Log
 
-        if (status === 'PERMANENT') {
-            await OpdCompetency.findOneAndUpdate(
-                { internId, moduleCode },
-                { consecutiveSuccessCount: consecutiveStr, competent: true, achievedAt: new Date() },
-                { upsert: true }
-            );
-            console.log('OpdCompetency Updated (PERMANENT).'); // Debug Log
-        } else {
-            // Update count but not competent
-            await OpdCompetency.findOneAndUpdate(
-                { internId, moduleCode },
-                { consecutiveSuccessCount: consecutiveStr, competent: false },
-                { upsert: true }
-            );
-            console.log('OpdCompetency Updated (TEMPORARY).'); // Debug Log
-        }
+        // REMOVED: Immediate OpdCompetency update. 
+        // Now handled in acknowledgeAttempt.
 
         // await session.commitTransaction();
 

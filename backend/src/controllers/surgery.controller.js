@@ -76,7 +76,7 @@ exports.addAttempt = async (req, res) => {
 
         // Determine Final Status
         if (hasLowScore) {
-            status = 'TEMPORARY';
+            status = 'PENDING_ACK'; // Was TEMPORARY, now PENDING_ACK for visibility
         } else {
             status = 'PENDING_ACK';
         }
@@ -147,7 +147,7 @@ exports.editAttempt = async (req, res) => {
             }
         }
 
-        if (hasLowScore) status = 'TEMPORARY';
+        if (hasLowScore) status = 'PENDING_ACK';
 
         // Apply Updates
         evalDoc.attempts[attemptIndex].answers = answers;

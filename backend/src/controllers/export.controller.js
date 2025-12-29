@@ -15,7 +15,8 @@ exports.exportBatchExcel = async (req, res) => {
         // Assuming strict batch filtering:
         const interns = await User.find({ role: 'INTERN', batchId: batchId })
             .select('fullName regNo email batchId')
-            .populate('batchId', 'name');
+            .populate('batchId', 'name')
+            .sort({ fullName: 1 });
 
         if (interns.length === 0) {
             return res.status(404).json({ error: 'No interns found in this batch' });
@@ -25,10 +26,10 @@ exports.exportBatchExcel = async (req, res) => {
 
         // 2. Fetch All Evaluations for these Interns
         const [opdEvals, surgeryEvals, wetlabEvals, academicEvals] = await Promise.all([
-            OpdEvaluation.find({ internId: { $in: internIds } }),
-            SurgeryEvaluation.find({ internId: { $in: internIds } }),
-            WetlabEvaluation.find({ internId: { $in: internIds } }),
-            AcademicEvaluation.find({ internId: { $in: internIds } })
+            OpdEvaluation.find({ internId: { $in: internIds } }).populate('attempts.facultyId', 'fullName'),
+            SurgeryEvaluation.find({ internId: { $in: internIds } }).populate('attempts.facultyId', 'fullName'),
+            WetlabEvaluation.find({ internId: { $in: internIds } }).populate('attempts.facultyId', 'fullName'),
+            AcademicEvaluation.find({ internId: { $in: internIds } }).populate('attempts.facultyId', 'fullName')
         ]);
 
         // 3. Map Evaluations by InternId for easier access (optional) or just pass arrays
@@ -55,8 +56,8 @@ exports.exportInternReport = async (req, res) => {
         if (!intern) return res.status(404).json({ error: 'Intern not found' });
 
         // Fetch Data
-        const surgeryEval = await SurgeryEvaluation.findOne({ internId });
-        const opdEval = await OpdEvaluation.findOne({ internId }); // Assuming generic or specific one
+        const surgeryEval = await SurgeryEvaluation.findOne({ internId }).populate('attempts.facultyId', 'fullName');
+        const opdEval = await OpdEvaluation.findOne({ internId }).populate('attempts.facultyId', 'fullName'); // Assuming generic or specific one
 
         const surgeryAttempts = surgeryEval ? surgeryEval.attempts : [];
         const opdAttempts = opdEval ? opdEval.attempts : [];

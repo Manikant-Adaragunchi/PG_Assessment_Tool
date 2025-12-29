@@ -18,27 +18,30 @@ exports.generateBatchExcel = async (payload, res) => {
         { header: 'Total Academic', key: 'academicCount', width: 15 },
     ];
 
-    interns.forEach(intern => {
-        // Find counts
-        const opdDoc = opdEvals.find(e => e.internId.toString() === intern._id.toString());
-        const surgeryDoc = surgeryEvals.find(e => e.internId.toString() === intern._id.toString());
-        // WetLab/Academic are arrays of documents per attempt (usually) OR single doc with attempts?
-        // Wait, WetLab/Academic schemas are typically per-attempt documents in this system (based on earlier logs), unlike Opd/Surgery which are Container Docs.
-        // Let me double check usage. InternPerformance.jsx mapped them directly.
-        // Checking schemas would be ideal, but based on "find({ internId: { $in... } })" returning array, 
-        // if WetLab is 1 doc per attempt, filtering by internId gives all attempts.
-        // If Opd is 1 doc per intern (container), filtering gives 1 doc per intern.
+    // Create Maps for easier lookup by internId
+    const opdMap = {};
+    opdEvals.forEach(e => opdMap[e.internId.toString()] = e);
 
-        // Let's assume:
-        // Opd: Container (attempts array)
-        // Surgery: Container (attempts array) - wait, previous code accessed "surgeryEval.attempts". So Container.
-        // WetLab: Likely 1 doc per attempt? InternPerformance maps "performance.wetlab". 
-        // Let's handle both cases safely.
+    const surgeryMap = {};
+    surgeryEvals.forEach(e => surgeryMap[e.internId.toString()] = e);
+
+    const wetlabMap = {};
+    wetlabEvals.forEach(e => wetlabMap[e.internId.toString()] = e);
+
+    const academicMap = {};
+    academicEvals.forEach(e => academicMap[e.internId.toString()] = e);
+
+    // Iterate Sorted Interns to populate Summary Sheet
+    interns.forEach(intern => {
+        const opdDoc = opdMap[intern._id.toString()];
+        const surgeryDoc = surgeryMap[intern._id.toString()];
+        const wetlabDoc = wetlabMap[intern._id.toString()];
+        const academicDoc = academicMap[intern._id.toString()];
 
         const opdCount = opdDoc ? opdDoc.attempts.length : 0;
         const surgeryCount = surgeryDoc ? surgeryDoc.attempts.length : 0;
-        const wetlabCount = wetlabEvals.filter(e => e.internId.toString() === intern._id.toString()).length;
-        const academicCount = academicEvals.filter(e => e.internId.toString() === intern._id.toString()).length;
+        const wetlabCount = wetlabDoc ? wetlabDoc.attempts.length : 0;
+        const academicCount = academicDoc ? academicDoc.attempts.length : 0;
 
         summarySheet.addRow({
             name: intern.fullName,
@@ -53,25 +56,30 @@ exports.generateBatchExcel = async (payload, res) => {
     opdSheet.columns = [
         { header: 'Intern Name', key: 'intern', width: 25 },
         { header: 'Date', key: 'date', width: 15 },
+        { header: 'Module ID', key: 'moduleId', width: 25 }, // Added Module ID
         { header: 'Procedure', key: 'procedure', width: 25 },
         { header: 'Result', key: 'result', width: 10 },
-        { header: 'Status', key: 'status', width: 15 },
+        { header: 'Score/Status', key: 'status', width: 15 },
         { header: 'Faculty', key: 'faculty', width: 20 },
     ];
 
-    opdEvals.forEach(doc => {
-        const intern = internMap[doc.internId.toString()];
-        if (!intern || !doc.attempts) return;
+    interns.forEach(intern => {
+        const doc = opdEvals.find(e => e.internId.toString() === intern._id.toString());
+        if (!doc || !doc.attempts) return;
+
         doc.attempts.forEach(att => {
             opdSheet.addRow({
                 intern: intern.fullName,
                 date: new Date(att.attemptDate).toLocaleDateString(),
+                moduleId: doc.moduleCode || 'OPD',
                 procedure: att.procedureName || 'General',
                 result: att.result,
                 status: att.status,
-                faculty: 'N/A' // populating faculty names would require backend population. Skipping for speed or need to populate in controller.
+                faculty: att.facultyId ? att.facultyId.fullName : 'N/A'
             });
         });
+        // Visual break
+        opdSheet.addRow({});
     });
 
     // --- SHEET 3: SURGERY LOGS ---
@@ -79,29 +87,35 @@ exports.generateBatchExcel = async (payload, res) => {
     surgerySheet.columns = [
         { header: 'Intern Name', key: 'intern', width: 25 },
         { header: 'Date', key: 'date', width: 15 },
+        { header: 'Module ID', key: 'moduleId', width: 25 }, // Added Module ID
         { header: 'Surgery', key: 'surgery', width: 25 },
         { header: 'Patient', key: 'patient', width: 20 },
-        { header: 'Score', key: 'score', width: 10 },
+        { header: 'Total Marks', key: 'score', width: 15 }, // Renamed to Total Marks
         { header: 'Grade', key: 'grade', width: 15 },
+        { header: 'Faculty', key: 'faculty', width: 20 }, // Added Faculty
         { header: 'Remarks', key: 'remarks', width: 30 },
     ];
 
-    surgeryEvals.forEach(doc => {
-        const intern = internMap[doc.internId.toString()];
-        if (!intern || !doc.attempts) return;
+    interns.forEach(intern => {
+        const doc = surgeryEvals.find(e => e.internId.toString() === intern._id.toString());
+        if (!doc || !doc.attempts) return;
+
         doc.attempts.forEach(att => {
-            // calc total score if not stored
             const total = att.totalScore || (att.answers ? att.answers.reduce((s, a) => s + (a.scoreValue || 0), 0) : 0);
             surgerySheet.addRow({
                 intern: intern.fullName,
                 date: new Date(att.attemptDate || att.date).toLocaleDateString(),
+                moduleId: doc.moduleCode || 'SURGERY',
                 surgery: att.surgeryName || 'Unknown',
                 patient: att.patientName || att.patientId,
                 score: total,
                 grade: att.grade,
-                remarks: att.remarks
+                faculty: att.facultyId ? att.facultyId.fullName : 'N/A',
+                remarks: att.remarksOverall || att.remarks
             });
         });
+        // Visual break
+        surgerySheet.addRow({});
     });
 
     // --- SHEET 4: WET LAB ---
@@ -109,22 +123,29 @@ exports.generateBatchExcel = async (payload, res) => {
     wetlabSheet.columns = [
         { header: 'Intern Name', key: 'intern', width: 25 },
         { header: 'Date', key: 'date', width: 15 },
+        { header: 'Module ID', key: 'moduleId', width: 20 }, // Added
         { header: 'Exercise', key: 'exercise', width: 25 },
-        { header: 'Score', key: 'score', width: 10 },
+        { header: 'Total Marks', key: 'score', width: 15 },
         { header: 'Grade', key: 'grade', width: 15 },
     ];
 
-    wetlabEvals.forEach(item => {
-        const intern = internMap[item.internId.toString()];
-        if (!intern) return;
-        // WetLab seems to be per-document based on "find" returning array of evals
-        wetlabSheet.addRow({
-            intern: intern.fullName,
-            date: new Date(item.date || item.createdAt).toLocaleDateString(),
-            exercise: item.exerciseName || item.topicName,
-            score: item.totalScore,
-            grade: item.grade
+    interns.forEach(intern => {
+        const doc = wetlabEvals.find(e => e.internId.toString() === intern._id.toString());
+        if (!doc || !doc.attempts) return;
+
+        doc.attempts.forEach(att => {
+            wetlabSheet.addRow({
+                intern: intern.fullName,
+                date: new Date(att.date || doc.createdAt).toLocaleDateString(),
+                moduleId: doc.moduleCode || 'WETLAB',
+                exercise: att.exerciseName || att.topicName,
+                score: att.totalScore,
+                grade: att.grade,
+                faculty: att.facultyId ? att.facultyId.fullName : 'N/A'
+            });
         });
+        // Visual break
+        wetlabSheet.addRow({});
     });
 
     // --- SHEET 5: ACADEMICS ---
@@ -132,23 +153,31 @@ exports.generateBatchExcel = async (payload, res) => {
     academicSheet.columns = [
         { header: 'Intern Name', key: 'intern', width: 25 },
         { header: 'Date', key: 'date', width: 15 },
+        { header: 'Module ID', key: 'moduleId', width: 20 }, // Added
         { header: 'Type', key: 'type', width: 15 },
         { header: 'Topic', key: 'topic', width: 25 },
-        { header: 'Score', key: 'score', width: 10 },
+        { header: 'Total Marks', key: 'score', width: 15 },
         { header: 'Grade', key: 'grade', width: 15 },
     ];
 
-    academicEvals.forEach(item => {
-        const intern = internMap[item.internId.toString()];
-        if (!intern) return;
-        academicSheet.addRow({
-            intern: intern.fullName,
-            date: new Date(item.date || item.createdAt).toLocaleDateString(),
-            type: item.evaluationType,
-            topic: item.topic || item.topicName,
-            score: item.totalScore,
-            grade: item.grade
+    interns.forEach(intern => {
+        const doc = academicEvals.find(e => e.internId.toString() === intern._id.toString());
+        if (!doc || !doc.attempts) return;
+
+        doc.attempts.forEach(att => {
+            academicSheet.addRow({
+                intern: intern.fullName,
+                date: new Date(att.date || doc.createdAt).toLocaleDateString(),
+                moduleId: doc.moduleCode || 'ACADEMIC',
+                type: att.evaluationType,
+                topic: att.topic || att.topicName,
+                score: att.scores ? Object.values(att.scores).reduce((a, b) => a + b, 0) : 0,
+                grade: att.grade || 'N/A',
+                faculty: att.facultyId ? att.facultyId.fullName : 'N/A'
+            });
         });
+        // Visual break
+        academicSheet.addRow({});
     });
 
     res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -184,8 +213,16 @@ exports.generateInternPDF = (internData, surgeryAttempts, opdAttempts, res) => {
     } else {
         surgeryAttempts.forEach((att, i) => {
             doc.fontSize(12).font('Helvetica-Bold').text(`Attempt ${att.attemptNumber} - ${new Date(att.date).toLocaleDateString()}`);
-            doc.font('Helvetica').text(`Status: ${att.status}`);
-            doc.text(`Remarks: ${att.remarks || 'None'}`);
+            doc.font('Helvetica').text(`Module: ${att.surgeryName || 'SURGERY'}`); // Added Module ID
+            doc.text(`Status: ${att.status}`);
+
+            // Calc Score
+            const total = att.totalScore || (att.answers ? att.answers.reduce((s, a) => s + (a.scoreValue || 0), 0) : 0);
+            doc.text(`Total Marks: ${total}`, { underline: true }); // Added Total Marks
+            doc.text(`Grade: ${att.grade || 'N/A'}`);
+            doc.text(`Faculty: ${att.facultyId ? att.facultyId.fullName : 'N/A'}`); // Added Faculty
+
+            doc.text(`Remarks: ${att.remarks || att.remarksOverall || 'None'}`);
             doc.moveDown(0.5);
         });
     }
@@ -196,13 +233,17 @@ exports.generateInternPDF = (internData, surgeryAttempts, opdAttempts, res) => {
     doc.fontSize(16).text('OPD Competency Logs', { underline: true });
     doc.moveDown();
 
+    // OPD Section (Simplified for PDF)
+    // Note: OPD typically doesn't have "marks" but Result/Grade. If requested, we can show Grade.
     if (opdAttempts.length === 0) {
         doc.fontSize(12).text('No records found.', { oblique: true });
     } else {
         opdAttempts.forEach((att, i) => {
             doc.fontSize(12).font('Helvetica-Bold').text(`Attempt ${att.attemptNumber} - ${new Date(att.date || att.attemptDate).toLocaleDateString()}`);
-            doc.font('Helvetica').text(`Result: ${att.result}`);
-            doc.text(`Status: ${att.status}`);
+            doc.font('Helvetica').text(`Module: ${att.procedureName || 'OPD'}`);
+            doc.text(`Result: ${att.result}`);
+            doc.text(`Grade: ${att.grade}`); // Added Grade/Status
+            doc.text(`Faculty: ${att.facultyId ? att.facultyId.fullName : 'N/A'}`); // Added Faculty
             doc.moveDown(0.5);
         });
     }

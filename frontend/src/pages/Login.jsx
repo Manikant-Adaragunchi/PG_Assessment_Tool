@@ -69,8 +69,8 @@ const Login = () => {
                             <img src={loginLogo} alt="SDM Logo" className="w-full h-full object-cover" />
                         </div>
                         <h1 className="text-3xl font-bold text-white mb-2 tracking-tight drop-shadow-md">
-                            SDM Medical Science<br />
-                            <span className="text-white text-2xl font-medium">and Hospital</span>
+                            SDM College of Medical Science<br />
+                            <span className="text-white text-2xl font-medium">& Hospital</span>
                         </h1>
                         <div className="h-1 w-20 bg-white/50 mx-auto rounded-full mt-3 mb-2"></div>
                         <p className="text-white text-sm font-medium tracking-wide border px-3 py-1 rounded-full border-blue-400/30 inline-block bg-blue-500/20">
@@ -156,7 +156,7 @@ const Login = () => {
                 </div>
 
                 <p className="text-center text-white/60 text-xs mt-6 drop-shadow-sm">
-                    &copy; {new Date().getFullYear()} SDM Medical Science and Hospital
+                    &copy; {new Date().getFullYear()} SDM College of Medical Science & Hospital
                 </p>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getBatches, deleteBatch } from '../../services/adminApi';
+import { getBatches, deleteBatch, deleteBatchPermanently } from '../../services/adminApi';
 import { Link } from 'react-router-dom';
 
 const BatchList = () => {
@@ -24,12 +24,27 @@ const BatchList = () => {
     }, []);
 
     const handleDelete = async (id) => {
-        if (!window.confirm("Are you sure? This will delete the batch but keep student records (unassigned).")) return;
+        if (!window.confirm("Are you sure you want to ARCHIVE this batch? This will hide it from the PG List but keep data.")) return;
         try {
             await deleteBatch(id);
-            // Optimistic update
+            // Optimistic update: Update status to ARCHIVED
+            setBatches(batches.map(b => b._id === id ? { ...b, status: 'ARCHIVED' } : b));
+            alert("Batch archived successfully.");
+        } catch (err) {
+            alert("Failed: " + err);
+        }
+    };
+
+    const handlePermanentDelete = async (id) => {
+        if (!window.confirm("WARNING: Are you sure you want to PERMANENTLY DELETE this batch? This will delete all Interns and their evaluation data forever. This cannot be undone.")) return;
+
+        const confirmText = prompt("Type 'DELETE' to confirm permanent deletion:");
+        if (confirmText !== 'DELETE') return;
+
+        try {
+            await deleteBatchPermanently(id);
             setBatches(batches.filter(b => b._id !== id));
-            alert("Batch deleted.");
+            alert("Batch and all related data deleted permanently.");
         } catch (err) {
             alert("Failed: " + err);
         }
@@ -57,15 +72,31 @@ const BatchList = () => {
                     <div key={batch._id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                         <div className="p-4 bg-gray-50 border-b border-gray-200 flex justify-between items-center">
                             <div>
-                                <h2 className="text-lg font-bold text-gray-800">{batch.name}</h2>
+                                <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
+                                    {batch.name}
+                                    {batch.status === 'ARCHIVED' && (
+                                        <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full font-medium">Archived</span>
+                                    )}
+                                </h2>
                                 <span className="text-xs text-gray-500">Started: {new Date(batch.startDate).toLocaleDateString()}</span>
                             </div>
-                            <button
-                                onClick={() => handleDelete(batch._id)}
-                                className="text-red-500 hover:text-red-700 text-sm font-medium px-3 py-1 bg-white border border-red-200 rounded hover:bg-red-50 transition-colors"
-                            >
-                                Delete Batch
-                            </button>
+                            <div className="flex gap-2">
+                                {batch.status === 'ARCHIVED' ? (
+                                    <button
+                                        onClick={() => handlePermanentDelete(batch._id)}
+                                        className="text-white hover:bg-red-700 bg-red-600 text-sm font-medium px-3 py-1 border border-red-600 rounded transition-colors"
+                                    >
+                                        Delete Permanently
+                                    </button>
+                                ) : (
+                                    <button
+                                        onClick={() => handleDelete(batch._id)}
+                                        className="text-yellow-600 hover:text-yellow-800 text-sm font-medium px-3 py-1 bg-white border border-yellow-300 rounded hover:bg-yellow-50 transition-colors"
+                                    >
+                                        Archive Batch
+                                    </button>
+                                )}
+                            </div>
                         </div>
 
                         <div className="p-0">
